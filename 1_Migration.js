@@ -8,7 +8,9 @@ module.exports = function(deployer) {
     firstname : Buffer.from( "Alireza" , "utf-8" ),
     lastname : Buffer.from( "Kiakojouri" , "utf-8" ),
     id : 3657700005,
-    voteID : 1
+    voteID : 1,
+    voteCount : 0
+
   }
 
   const candidate2 = {
@@ -16,7 +18,9 @@ module.exports = function(deployer) {
     firstname : Buffer.from( "Babak" , "utf-8" ),
     lastname : Buffer.from( "Arjmand" , "utf-8" ),
     id : 856325654,
-    voteID : 2
+    voteID : 2,
+    voteCount : 0
+
   }
 
   const candidate3 = {
@@ -24,7 +28,9 @@ module.exports = function(deployer) {
     firstname : Buffer.from( "Pedram" , "utf-8" ),
     lastname : Buffer.from( "Nazeri" , "utf-8" ),
     id : 8754553465,
-    voteID : 3
+    voteID : 3,
+    voteCount : 0
+    
   }
 
   const listOfCandidates = [ candidate1 , candidate2 , candidate3 ];
