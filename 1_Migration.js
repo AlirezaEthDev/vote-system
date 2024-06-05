@@ -1,5 +1,6 @@
 
 const voteSystem = artifacts.require("./voteSystem.sol");
+const voteLibrary = artifacts.require("./voteLibrary.sol");
 
 module.exports = function(deployer) {
 
@@ -35,6 +36,8 @@ module.exports = function(deployer) {
 
   const listOfCandidates = [ candidate1 , candidate2 , candidate3 ];
 
+  deployer.deploy( voteLibrary );
+  deployer.link( voteLibrary , voteSystem );
   deployer.deploy( voteSystem , listOfCandidates );
 
 }
