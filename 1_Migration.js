@@ -1,19 +1,12 @@
 
 const Web3 = require("web3");
-const web3=new Web3("ws://localhost:8545");
-const erc1271 = artifacts.require("./erc1271.sol");
+const web3=new Web3("http://localhost:7545");
 
 const signatureObject = web3.eth.accounts.sign( "Alireza Kiakojouri" , "0x4aef83682bca621d05a70ea0a742506fe29d9672427f8ddc821ecda2228a59d1" );
 
 console.info( signatureObject );
 
-module.exports = function( deployer ){
-
-  deployer.deploy(erc1271)
-
-}
-
-/*const voteSystem = artifacts.require("./voteSystem.sol");
+const voteSystem = artifacts.require("./voteSystem.sol");
 const voteLibrary = artifacts.require("./voteLibrary.sol");
 
 module.exports = function(deployer) {
@@ -54,4 +47,4 @@ module.exports = function(deployer) {
   deployer.link( voteLibrary , voteSystem );
   deployer.deploy( voteSystem , listOfCandidates );
 
-}*/
+}

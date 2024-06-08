@@ -6,6 +6,9 @@ pragma solidity ^0.5.12;
 
 library voteLibrary{
 
+    address constant public trustedAccount = 0xF3ca7784b075Bbc683Aaeb18C11E47E5ee3f3350;
+    bytes4 constant public magicValue = 0x1626ba7e;
+
     struct voteCounting{
 
         uint8 voteID;
@@ -41,7 +44,50 @@ library voteLibrary{
 
         }
 
-        return countResult;
+        return sortedCountResult;
+
+    }
+
+    function isValidSignature( bytes32 _hash , bytes calldata _signature ) external view returns ( bytes4 ){
+
+        address signer = recoverSignature( _hash , _signature );
+
+        if( signer == trustedAccount ){
+
+            return 0x1626ba7e;
+
+        }else{
+
+            return 0xffffffff;
+
+        }
+
+    }
+
+    function recoverSignature( bytes32 _hash , bytes memory _signature ) public pure returns( address ){
+
+        require( _signature.length == 65 , "Signature length is not valid!" );
+
+        uint8 v = uint8( _signature[ 64 ] );
+        bytes32 r;
+        bytes32 s;
+
+        assembly {
+
+            r := mload( add( _signature , 0x20 ) )
+            s := mload( add( _signature , 0x40 ) )
+
+        }
+
+        require( uint256( s ) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0 ,
+                    " The 's' value of the signature is not valid! " );
+        require( v == 27 || v == 28 , " The 'v' value of the signature is not valid! " );
+
+        address signer = ecrecover( _hash , v , r , s );
+
+        require( signer != address( 0x0 ) , " The signer address is not valid! " );
+
+        return signer;
 
     }
 
@@ -69,6 +115,8 @@ contract voteSystem{
     event newVoteTo( bytes votedCandidate , uint candidatesVoteID , address voter );
 
     mapping( uint8 => candidate ) private candidateList;
+    mapping( address => bool ) private revoteCheck;
+
 
     modifier onlyTrustedAccount( address accountAddress ) {
 
@@ -77,9 +125,9 @@ contract voteSystem{
 
     }
 
-    constructor( candidate[] memory listOfCandidates ) public {
+    function addCandidateList( candidate[] calldata listOfCandidates ) external onlyTrustedAccount(msg.sender) {
 
-        require( tx.origin == trustedAccount , "Just the trusted account can deploy vote system!");
+        candidateCounter = 0;
 
         for ( uint i = 0 ; i < listOfCandidates.length ; i++ ){
 
@@ -108,10 +156,18 @@ contract voteSystem{
 
     }
 
-    function voteTo( uint8 candidateVoteID ) external {
+    function voteTo( uint8 candidateVoteID , bytes32 voteHash , bytes calldata trustedAccountSignature ) external {
 
-        require( block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod , "Out of vote period!" );
+        require( startOfVotePeriod!= 0 && block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod , "Out of vote period!" );
         
+        //Validating revote
+        require( !revoteCheck[ msg.sender ] , "Revoting is not allowed!" );
+
+        //Validating signature
+        bytes4 validationResult = voteLibrary.isValidSignature( voteHash , trustedAccountSignature );
+        require( validationResult == 0x1626ba7e , " You are not an eligible voter! " );
+
+        //Counting the vote
         uint codeSize;
         address msgSender = msg.sender;
 
@@ -124,6 +180,7 @@ contract voteSystem{
         if( codeSize == 0){
 
             candidateList[ candidateVoteID ].voteCount++;
+            revoteCheck[ msg.sender ] = true;
 
             emit newVoteTo( abi.encodePacked( candidateList[ candidateVoteID ].firstname , candidateList[ candidateVoteID ].lastname ) ,
                             candidateList[ candidateVoteID ].voteID , msg.sender );
