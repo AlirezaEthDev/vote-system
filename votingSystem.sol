@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: MIT`
+// SPDX-License-Identifier: MIT
 
-pragma experimental ABIEncoderV2;
+//pragma experimental ABIEncoderV2;
 
-pragma solidity ^0.5.12;
+pragma solidity ^0.8.0;
 
 library voteLibrary{
 
@@ -66,7 +66,8 @@ library voteLibrary{
 
     function recoverSignature( bytes32 _hash , bytes memory _signature ) public pure returns( address ){
 
-        require( _signature.length == 65 , "Signature length is not valid!" );
+        require( _signature.length == 65 , "01" );
+        //01: Signature length is not valid!
 
         uint8 v = uint8( _signature[ 64 ] );
         bytes32 r;
@@ -80,12 +81,15 @@ library voteLibrary{
         }
 
         require( uint256( s ) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0 ,
-                    " The 's' value of the signature is not valid! " );
-        require( v == 27 || v == 28 , " The 'v' value of the signature is not valid! " );
+                    " 02 " );
+        //02: The 's' value of the signature is not valid!
+        require( v == 27 || v == 28 , " 03 " );
+        //03: The 'v' value of the signature is not valid!
 
         address signer = ecrecover( _hash , v , r , s );
 
-        require( signer != address( 0x0 ) , " The signer address is not valid! " );
+        require( signer != address( 0x0 ) , " 04 " );
+        //04: The signer address is not valid!
 
         return signer;
 
@@ -120,7 +124,8 @@ contract voteSystem{
 
     modifier onlyTrustedAccount( address accountAddress ) {
 
-        require( trustedAccount == accountAddress , "Just the trusted account has access to do this task!" );
+        require( trustedAccount == accountAddress , "05" );
+        //05: Just the trusted account has access to do this task!
         _;
 
     }
@@ -147,7 +152,8 @@ contract voteSystem{
 
     function setVotePeriod( uint startTime , uint endTime ) external onlyTrustedAccount( msg.sender ) {
 
-        require( startOfVotePeriod == 0 || block.timestamp < startOfVotePeriod , "Reset the vote period is not allowed!" );
+        require( startOfVotePeriod == 0 || block.timestamp < startOfVotePeriod , "06" );
+        //06: Reset the vote period is not allowed!
         
         startOfVotePeriod = startTime;
         endOfVotePeriod = endTime;
@@ -158,14 +164,17 @@ contract voteSystem{
 
     function voteTo( uint8 candidateVoteID , bytes32 voteHash , bytes calldata trustedAccountSignature ) external {
 
-        require( startOfVotePeriod!= 0 && block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod , "Out of vote period!" );
+        require( startOfVotePeriod!= 0 && block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod , " 07 " );
+        //07: Out of vote period!
         
         //Validating revote
-        require( !revoteCheck[ msg.sender ] , "Revoting is not allowed!" );
+        require( !revoteCheck[ msg.sender ] , " 08 " );
+        //08: Revoting is not allowed!
 
         //Validating signature
         bytes4 validationResult = voteLibrary.isValidSignature( voteHash , trustedAccountSignature );
-        require( validationResult == 0x1626ba7e , " You are not an eligible voter! " );
+        require( validationResult == 0x1626ba7e , " 09 " );
+        //09: You are not an eligible voter!
 
         //Counting the vote
         uint codeSize;
@@ -187,7 +196,8 @@ contract voteSystem{
 
         }else{
 
-            revert( "Smart contract is not allowed to vote!" );
+            revert( " 10 " );
+            //10: Smart contract is not allowed to vote!
 
         }
 

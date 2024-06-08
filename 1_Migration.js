@@ -45,6 +45,6 @@ module.exports = function(deployer) {
 
   deployer.deploy( voteLibrary );
   deployer.link( voteLibrary , voteSystem );
-  deployer.deploy( voteSystem , listOfCandidates );
+  deployer.deploy( voteSystem );
 
 }
