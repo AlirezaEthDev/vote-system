@@ -1,0 +1,60 @@
+digraph G {
+  graph [ ratio = "auto", page = "100", compound =true, bgcolor = "#2e3e56" ];
+  node [ style = "filled", fillcolor = "#edad56", color = "#edad56", penwidth =3 ];
+  edge [ color = "#fcfcfc", penwidth =2, fontname = "helvetica Neue Ultra Light" ];
+subgraph "clusterVoteLibrary" {
+  graph [ label = "VoteLibrary  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "VoteLibrary.voteCounter" [ label = "voteCounter" ];
+  "VoteLibrary.isValidSignature" [ label = "isValidSignature", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "VoteLibrary.recoverSignature" [ label = "recoverSignature" ];
+  "VoteLibrary.VoteCounting" [ label = "VoteCounting" ];
+}
+
+subgraph "clusterVoteSystem" {
+  graph [ label = "VoteSystem", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "VoteSystem.onlyTrustedAccount" [ label = "onlyTrustedAccount", color = "#1bc6a6", shape =doubleoctagon ];
+  "VoteSystem.addCandidateList" [ label = "addCandidateList", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "VoteSystem.viewList" [ label = "viewList", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "VoteSystem.setVotePeriod" [ label = "setVotePeriod", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "VoteSystem.voteTo" [ label = "voteTo", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "VoteSystem.countVote" [ label = "countVote", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+  "VoteLibrary.isValidSignature";
+  "VoteLibrary.recoverSignature";
+  "VoteSystem.voteTo";
+  "VoteSystem.countVote";
+  "VoteLibrary.VoteCounting";
+  "VoteLibrary.voteCounter";
+  "VoteLibrary.isValidSignature" -> "VoteLibrary.recoverSignature" [ color = "#1bc6a6" ];
+  "VoteSystem.voteTo" -> "VoteLibrary.isValidSignature" [ color = "white" ];
+  "VoteSystem.countVote" -> "VoteLibrary.VoteCounting" [ color = "white" ];
+  "VoteSystem.countVote" -> "VoteLibrary.voteCounter" [ color = "white" ];
+
+
+rankdir=LR
+node [shape=plaintext]
+subgraph cluster_01 { 
+label = "Legend";
+key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td align="right" port="i1">Internal Call</td></tr>
+  <tr><td align="right" port="i2">External Call</td></tr>
+  <tr><td align="right" port="i3">Defined Contract</td></tr>
+  <tr><td align="right" port="i4">Undefined Contract</td></tr>
+  </table>>]
+key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td port="i1">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i2">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i3" bgcolor="#445773">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i4">
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="7" color="#e8726d">
+      <tr>
+       <td></td>
+      </tr>
+     </table>
+  </td></tr>
+  </table>>]
+key:i1:e -> key2:i1:w [color="#1bc6a6"]
+key:i2:e -> key2:i2:w [color="white"]
+}
+}
