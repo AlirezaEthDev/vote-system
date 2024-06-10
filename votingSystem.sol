@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-//pragma experimental ABIEncoderV2;
-
 pragma solidity ^0.8.0;
 
 library VoteLibrary{
@@ -117,7 +115,6 @@ contract VoteSystem{
     function setVotePeriod(uint startTime, uint endTime) external onlyTrustedAccount(msg.sender) {
         // Ensures that this function is executed before the voting period starts
         require(startOfVotePeriod == 0 || block.timestamp < startOfVotePeriod, "06");// 06: Reset the vote period is not allowed!
-        
         // Sets the start and end times for voting
         startOfVotePeriod = startTime;
         endOfVotePeriod = endTime;
@@ -126,15 +123,12 @@ contract VoteSystem{
 
     function voteTo(uint8 candidateVoteID, bytes32 voteHash, bytes calldata trustedAccountSignature) external {
         // Ensures that this function only executed during the voting period
-        require(startOfVotePeriod!= 0 && block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod, "07");// 07: Out of vote period!    
-        
+        require(startOfVotePeriod!= 0 && block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod, "07");// 07: Out of vote period!
         //Validate revote
         require(!revoteCheck[ msg.sender ], "08");// 08: Revoting is not allowed!
-        
         //Validate signature
         bytes4 validationResult = VoteLibrary.isValidSignature(voteHash, trustedAccountSignature);
         require(validationResult == 0x1626ba7e, "09");// 09: You are not an eligible voter!
-        
         //Count the vote
         uint codeSize;
         address msgSender = msg.sender;

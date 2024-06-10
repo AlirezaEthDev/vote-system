@@ -1,0 +1,2402 @@
+├─ type: SourceUnit
+└─ children
+   ├─ 0
+   │  ├─ type: PragmaDirective
+   │  ├─ name: solidity
+   │  └─ value: ^0.8.0
+   ├─ 1
+   │  ├─ type: ContractDefinition
+   │  ├─ name: VoteLibrary
+   │  ├─ baseContracts
+   │  ├─ subNodes
+   │  │  ├─ 0
+   │  │  │  ├─ type: StateVariableDeclaration
+   │  │  │  ├─ variables
+   │  │  │  │  └─ 0
+   │  │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     ├─ typeName
+   │  │  │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  ├─ name: address
+   │  │  │  │     │  └─ stateMutability
+   │  │  │  │     ├─ name: TRUSTED_ACCOUNT
+   │  │  │  │     ├─ identifier
+   │  │  │  │     │  ├─ type: Identifier
+   │  │  │  │     │  └─ name: TRUSTED_ACCOUNT
+   │  │  │  │     ├─ expression
+   │  │  │  │     │  ├─ type: NumberLiteral
+   │  │  │  │     │  ├─ number: 0xF3ca7784b075Bbc683Aaeb18C11E47E5ee3f3350
+   │  │  │  │     │  └─ subdenomination
+   │  │  │  │     ├─ visibility: public
+   │  │  │  │     ├─ isStateVar: true
+   │  │  │  │     ├─ isDeclaredConst: true
+   │  │  │  │     ├─ isIndexed: false
+   │  │  │  │     ├─ isImmutable: false
+   │  │  │  │     ├─ override
+   │  │  │  │     └─ storageLocation
+   │  │  │  └─ initialValue
+   │  │  │     ├─ type: NumberLiteral
+   │  │  │     ├─ number: 0xF3ca7784b075Bbc683Aaeb18C11E47E5ee3f3350
+   │  │  │     └─ subdenomination
+   │  │  ├─ 1
+   │  │  │  ├─ type: StateVariableDeclaration
+   │  │  │  ├─ variables
+   │  │  │  │  └─ 0
+   │  │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     ├─ typeName
+   │  │  │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  ├─ name: bytes4
+   │  │  │  │     │  └─ stateMutability
+   │  │  │  │     ├─ name: MAGIC_VALUE
+   │  │  │  │     ├─ identifier
+   │  │  │  │     │  ├─ type: Identifier
+   │  │  │  │     │  └─ name: MAGIC_VALUE
+   │  │  │  │     ├─ expression
+   │  │  │  │     │  ├─ type: NumberLiteral
+   │  │  │  │     │  ├─ number: 0x1626ba7e
+   │  │  │  │     │  └─ subdenomination
+   │  │  │  │     ├─ visibility: public
+   │  │  │  │     ├─ isStateVar: true
+   │  │  │  │     ├─ isDeclaredConst: true
+   │  │  │  │     ├─ isIndexed: false
+   │  │  │  │     ├─ isImmutable: false
+   │  │  │  │     ├─ override
+   │  │  │  │     └─ storageLocation
+   │  │  │  └─ initialValue
+   │  │  │     ├─ type: NumberLiteral
+   │  │  │     ├─ number: 0x1626ba7e
+   │  │  │     └─ subdenomination
+   │  │  ├─ 2
+   │  │  │  ├─ type: StructDefinition
+   │  │  │  ├─ name: VoteCounting
+   │  │  │  └─ members
+   │  │  │     ├─ 0
+   │  │  │     │  ├─ type: VariableDeclaration
+   │  │  │     │  ├─ typeName
+   │  │  │     │  │  ├─ type: ElementaryTypeName
+   │  │  │     │  │  ├─ name: uint8
+   │  │  │     │  │  └─ stateMutability
+   │  │  │     │  ├─ name: voteID
+   │  │  │     │  ├─ identifier
+   │  │  │     │  │  ├─ type: Identifier
+   │  │  │     │  │  └─ name: voteID
+   │  │  │     │  ├─ storageLocation
+   │  │  │     │  ├─ isStateVar: false
+   │  │  │     │  ├─ isIndexed: false
+   │  │  │     │  └─ expression
+   │  │  │     └─ 1
+   │  │  │        ├─ type: VariableDeclaration
+   │  │  │        ├─ typeName
+   │  │  │        │  ├─ type: ElementaryTypeName
+   │  │  │        │  ├─ name: uint
+   │  │  │        │  └─ stateMutability
+   │  │  │        ├─ name: voteCount
+   │  │  │        ├─ identifier
+   │  │  │        │  ├─ type: Identifier
+   │  │  │        │  └─ name: voteCount
+   │  │  │        ├─ storageLocation
+   │  │  │        ├─ isStateVar: false
+   │  │  │        ├─ isIndexed: false
+   │  │  │        └─ expression
+   │  │  ├─ 3
+   │  │  │  ├─ type: FunctionDefinition
+   │  │  │  ├─ name: voteCounter
+   │  │  │  ├─ parameters
+   │  │  │  │  └─ 0
+   │  │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     ├─ typeName
+   │  │  │  │     │  ├─ type: ArrayTypeName
+   │  │  │  │     │  ├─ baseTypeName
+   │  │  │  │     │  │  ├─ type: UserDefinedTypeName
+   │  │  │  │     │  │  └─ namePath: VoteCounting
+   │  │  │  │     │  └─ length
+   │  │  │  │     ├─ name: countResult
+   │  │  │  │     ├─ identifier
+   │  │  │  │     │  ├─ type: Identifier
+   │  │  │  │     │  └─ name: countResult
+   │  │  │  │     ├─ storageLocation: calldata
+   │  │  │  │     ├─ isStateVar: false
+   │  │  │  │     ├─ isIndexed: false
+   │  │  │  │     └─ expression
+   │  │  │  ├─ returnParameters
+   │  │  │  │  └─ 0
+   │  │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     ├─ typeName
+   │  │  │  │     │  ├─ type: ArrayTypeName
+   │  │  │  │     │  ├─ baseTypeName
+   │  │  │  │     │  │  ├─ type: UserDefinedTypeName
+   │  │  │  │     │  │  └─ namePath: VoteCounting
+   │  │  │  │     │  └─ length
+   │  │  │  │     ├─ name
+   │  │  │  │     ├─ identifier
+   │  │  │  │     ├─ storageLocation: memory
+   │  │  │  │     ├─ isStateVar: false
+   │  │  │  │     ├─ isIndexed: false
+   │  │  │  │     └─ expression
+   │  │  │  ├─ body
+   │  │  │  │  ├─ type: Block
+   │  │  │  │  └─ statements
+   │  │  │  │     ├─ 0
+   │  │  │  │     │  ├─ type: VariableDeclarationStatement
+   │  │  │  │     │  ├─ variables
+   │  │  │  │     │  │  └─ 0
+   │  │  │  │     │  │     ├─ type: VariableDeclaration
+   │  │  │  │     │  │     ├─ typeName
+   │  │  │  │     │  │     │  ├─ type: ArrayTypeName
+   │  │  │  │     │  │     │  ├─ baseTypeName
+   │  │  │  │     │  │     │  │  ├─ type: UserDefinedTypeName
+   │  │  │  │     │  │     │  │  └─ namePath: VoteCounting
+   │  │  │  │     │  │     │  └─ length
+   │  │  │  │     │  │     ├─ name: sortedCountResult
+   │  │  │  │     │  │     ├─ identifier
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: sortedCountResult
+   │  │  │  │     │  │     ├─ storageLocation: memory
+   │  │  │  │     │  │     ├─ isStateVar: false
+   │  │  │  │     │  │     ├─ isIndexed: false
+   │  │  │  │     │  │     └─ expression
+   │  │  │  │     │  └─ initialValue
+   │  │  │  │     │     ├─ type: FunctionCall
+   │  │  │  │     │     ├─ expression
+   │  │  │  │     │     │  ├─ type: NewExpression
+   │  │  │  │     │     │  └─ typeName
+   │  │  │  │     │     │     ├─ type: ArrayTypeName
+   │  │  │  │     │     │     ├─ baseTypeName
+   │  │  │  │     │     │     │  ├─ type: UserDefinedTypeName
+   │  │  │  │     │     │     │  └─ namePath: VoteCounting
+   │  │  │  │     │     │     └─ length
+   │  │  │  │     │     ├─ arguments
+   │  │  │  │     │     │  └─ 0
+   │  │  │  │     │     │     ├─ type: MemberAccess
+   │  │  │  │     │     │     ├─ expression
+   │  │  │  │     │     │     │  ├─ type: Identifier
+   │  │  │  │     │     │     │  └─ name: countResult
+   │  │  │  │     │     │     └─ memberName: length
+   │  │  │  │     │     ├─ names
+   │  │  │  │     │     └─ identifiers
+   │  │  │  │     ├─ 1
+   │  │  │  │     │  ├─ type: ForStatement
+   │  │  │  │     │  ├─ initExpression
+   │  │  │  │     │  │  ├─ type: VariableDeclarationStatement
+   │  │  │  │     │  │  ├─ variables
+   │  │  │  │     │  │  │  └─ 0
+   │  │  │  │     │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     │  │  │     ├─ typeName
+   │  │  │  │     │  │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  │  │     │  ├─ name: uint
+   │  │  │  │     │  │  │     │  └─ stateMutability
+   │  │  │  │     │  │  │     ├─ name: i
+   │  │  │  │     │  │  │     ├─ identifier
+   │  │  │  │     │  │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │  │     │  └─ name: i
+   │  │  │  │     │  │  │     ├─ storageLocation
+   │  │  │  │     │  │  │     ├─ isStateVar: false
+   │  │  │  │     │  │  │     ├─ isIndexed: false
+   │  │  │  │     │  │  │     └─ expression
+   │  │  │  │     │  │  └─ initialValue
+   │  │  │  │     │  │     ├─ type: NumberLiteral
+   │  │  │  │     │  │     ├─ number: 0
+   │  │  │  │     │  │     └─ subdenomination
+   │  │  │  │     │  ├─ conditionExpression
+   │  │  │  │     │  │  ├─ type: BinaryOperation
+   │  │  │  │     │  │  ├─ operator: <
+   │  │  │  │     │  │  ├─ left
+   │  │  │  │     │  │  │  ├─ type: Identifier
+   │  │  │  │     │  │  │  └─ name: i
+   │  │  │  │     │  │  └─ right
+   │  │  │  │     │  │     ├─ type: MemberAccess
+   │  │  │  │     │  │     ├─ expression
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: countResult
+   │  │  │  │     │  │     └─ memberName: length
+   │  │  │  │     │  ├─ loopExpression
+   │  │  │  │     │  │  ├─ type: ExpressionStatement
+   │  │  │  │     │  │  └─ expression
+   │  │  │  │     │  │     ├─ type: UnaryOperation
+   │  │  │  │     │  │     ├─ operator: ++
+   │  │  │  │     │  │     ├─ subExpression
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: i
+   │  │  │  │     │  │     └─ isPrefix: false
+   │  │  │  │     │  └─ body
+   │  │  │  │     │     ├─ type: Block
+   │  │  │  │     │     └─ statements
+   │  │  │  │     │        └─ 0
+   │  │  │  │     │           ├─ type: ExpressionStatement
+   │  │  │  │     │           └─ expression
+   │  │  │  │     │              ├─ type: BinaryOperation
+   │  │  │  │     │              ├─ operator: =
+   │  │  │  │     │              ├─ left
+   │  │  │  │     │              │  ├─ type: IndexAccess
+   │  │  │  │     │              │  ├─ base
+   │  │  │  │     │              │  │  ├─ type: Identifier
+   │  │  │  │     │              │  │  └─ name: sortedCountResult
+   │  │  │  │     │              │  └─ index
+   │  │  │  │     │              │     ├─ type: Identifier
+   │  │  │  │     │              │     └─ name: i
+   │  │  │  │     │              └─ right
+   │  │  │  │     │                 ├─ type: IndexAccess
+   │  │  │  │     │                 ├─ base
+   │  │  │  │     │                 │  ├─ type: Identifier
+   │  │  │  │     │                 │  └─ name: countResult
+   │  │  │  │     │                 └─ index
+   │  │  │  │     │                    ├─ type: Identifier
+   │  │  │  │     │                    └─ name: i
+   │  │  │  │     ├─ 2
+   │  │  │  │     │  ├─ type: VariableDeclarationStatement
+   │  │  │  │     │  ├─ variables
+   │  │  │  │     │  │  └─ 0
+   │  │  │  │     │  │     ├─ type: VariableDeclaration
+   │  │  │  │     │  │     ├─ typeName
+   │  │  │  │     │  │     │  ├─ type: UserDefinedTypeName
+   │  │  │  │     │  │     │  └─ namePath: VoteCounting
+   │  │  │  │     │  │     ├─ name: tempCounting
+   │  │  │  │     │  │     ├─ identifier
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: tempCounting
+   │  │  │  │     │  │     ├─ storageLocation: memory
+   │  │  │  │     │  │     ├─ isStateVar: false
+   │  │  │  │     │  │     ├─ isIndexed: false
+   │  │  │  │     │  │     └─ expression
+   │  │  │  │     │  └─ initialValue
+   │  │  │  │     ├─ 3
+   │  │  │  │     │  ├─ type: ForStatement
+   │  │  │  │     │  ├─ initExpression
+   │  │  │  │     │  │  ├─ type: VariableDeclarationStatement
+   │  │  │  │     │  │  ├─ variables
+   │  │  │  │     │  │  │  └─ 0
+   │  │  │  │     │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     │  │  │     ├─ typeName
+   │  │  │  │     │  │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  │  │     │  ├─ name: uint
+   │  │  │  │     │  │  │     │  └─ stateMutability
+   │  │  │  │     │  │  │     ├─ name: i
+   │  │  │  │     │  │  │     ├─ identifier
+   │  │  │  │     │  │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │  │     │  └─ name: i
+   │  │  │  │     │  │  │     ├─ storageLocation
+   │  │  │  │     │  │  │     ├─ isStateVar: false
+   │  │  │  │     │  │  │     ├─ isIndexed: false
+   │  │  │  │     │  │  │     └─ expression
+   │  │  │  │     │  │  └─ initialValue
+   │  │  │  │     │  │     ├─ type: NumberLiteral
+   │  │  │  │     │  │     ├─ number: 0
+   │  │  │  │     │  │     └─ subdenomination
+   │  │  │  │     │  ├─ conditionExpression
+   │  │  │  │     │  │  ├─ type: BinaryOperation
+   │  │  │  │     │  │  ├─ operator: <
+   │  │  │  │     │  │  ├─ left
+   │  │  │  │     │  │  │  ├─ type: Identifier
+   │  │  │  │     │  │  │  └─ name: i
+   │  │  │  │     │  │  └─ right
+   │  │  │  │     │  │     ├─ type: MemberAccess
+   │  │  │  │     │  │     ├─ expression
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: sortedCountResult
+   │  │  │  │     │  │     └─ memberName: length
+   │  │  │  │     │  ├─ loopExpression
+   │  │  │  │     │  │  ├─ type: ExpressionStatement
+   │  │  │  │     │  │  └─ expression
+   │  │  │  │     │  │     ├─ type: UnaryOperation
+   │  │  │  │     │  │     ├─ operator: ++
+   │  │  │  │     │  │     ├─ subExpression
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: i
+   │  │  │  │     │  │     └─ isPrefix: false
+   │  │  │  │     │  └─ body
+   │  │  │  │     │     ├─ type: Block
+   │  │  │  │     │     └─ statements
+   │  │  │  │     │        └─ 0
+   │  │  │  │     │           ├─ type: ForStatement
+   │  │  │  │     │           ├─ initExpression
+   │  │  │  │     │           │  ├─ type: VariableDeclarationStatement
+   │  │  │  │     │           │  ├─ variables
+   │  │  │  │     │           │  │  └─ 0
+   │  │  │  │     │           │  │     ├─ type: VariableDeclaration
+   │  │  │  │     │           │  │     ├─ typeName
+   │  │  │  │     │           │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │           │  │     │  ├─ name: uint
+   │  │  │  │     │           │  │     │  └─ stateMutability
+   │  │  │  │     │           │  │     ├─ name: j
+   │  │  │  │     │           │  │     ├─ identifier
+   │  │  │  │     │           │  │     │  ├─ type: Identifier
+   │  │  │  │     │           │  │     │  └─ name: j
+   │  │  │  │     │           │  │     ├─ storageLocation
+   │  │  │  │     │           │  │     ├─ isStateVar: false
+   │  │  │  │     │           │  │     ├─ isIndexed: false
+   │  │  │  │     │           │  │     └─ expression
+   │  │  │  │     │           │  └─ initialValue
+   │  │  │  │     │           │     ├─ type: BinaryOperation
+   │  │  │  │     │           │     ├─ operator: +
+   │  │  │  │     │           │     ├─ left
+   │  │  │  │     │           │     │  ├─ type: Identifier
+   │  │  │  │     │           │     │  └─ name: i
+   │  │  │  │     │           │     └─ right
+   │  │  │  │     │           │        ├─ type: NumberLiteral
+   │  │  │  │     │           │        ├─ number: 1
+   │  │  │  │     │           │        └─ subdenomination
+   │  │  │  │     │           ├─ conditionExpression
+   │  │  │  │     │           │  ├─ type: BinaryOperation
+   │  │  │  │     │           │  ├─ operator: <
+   │  │  │  │     │           │  ├─ left
+   │  │  │  │     │           │  │  ├─ type: Identifier
+   │  │  │  │     │           │  │  └─ name: j
+   │  │  │  │     │           │  └─ right
+   │  │  │  │     │           │     ├─ type: MemberAccess
+   │  │  │  │     │           │     ├─ expression
+   │  │  │  │     │           │     │  ├─ type: Identifier
+   │  │  │  │     │           │     │  └─ name: sortedCountResult
+   │  │  │  │     │           │     └─ memberName: length
+   │  │  │  │     │           ├─ loopExpression
+   │  │  │  │     │           │  ├─ type: ExpressionStatement
+   │  │  │  │     │           │  └─ expression
+   │  │  │  │     │           │     ├─ type: UnaryOperation
+   │  │  │  │     │           │     ├─ operator: ++
+   │  │  │  │     │           │     ├─ subExpression
+   │  │  │  │     │           │     │  ├─ type: Identifier
+   │  │  │  │     │           │     │  └─ name: j
+   │  │  │  │     │           │     └─ isPrefix: false
+   │  │  │  │     │           └─ body
+   │  │  │  │     │              ├─ type: Block
+   │  │  │  │     │              └─ statements
+   │  │  │  │     │                 └─ 0
+   │  │  │  │     │                    ├─ type: IfStatement
+   │  │  │  │     │                    ├─ condition
+   │  │  │  │     │                    │  ├─ type: BinaryOperation
+   │  │  │  │     │                    │  ├─ operator: <
+   │  │  │  │     │                    │  ├─ left
+   │  │  │  │     │                    │  │  ├─ type: MemberAccess
+   │  │  │  │     │                    │  │  ├─ expression
+   │  │  │  │     │                    │  │  │  ├─ type: IndexAccess
+   │  │  │  │     │                    │  │  │  ├─ base
+   │  │  │  │     │                    │  │  │  │  ├─ type: Identifier
+   │  │  │  │     │                    │  │  │  │  └─ name: sortedCountResult
+   │  │  │  │     │                    │  │  │  └─ index
+   │  │  │  │     │                    │  │  │     ├─ type: Identifier
+   │  │  │  │     │                    │  │  │     └─ name: i
+   │  │  │  │     │                    │  │  └─ memberName: voteCount
+   │  │  │  │     │                    │  └─ right
+   │  │  │  │     │                    │     ├─ type: MemberAccess
+   │  │  │  │     │                    │     ├─ expression
+   │  │  │  │     │                    │     │  ├─ type: IndexAccess
+   │  │  │  │     │                    │     │  ├─ base
+   │  │  │  │     │                    │     │  │  ├─ type: Identifier
+   │  │  │  │     │                    │     │  │  └─ name: sortedCountResult
+   │  │  │  │     │                    │     │  └─ index
+   │  │  │  │     │                    │     │     ├─ type: Identifier
+   │  │  │  │     │                    │     │     └─ name: j
+   │  │  │  │     │                    │     └─ memberName: voteCount
+   │  │  │  │     │                    ├─ trueBody
+   │  │  │  │     │                    │  ├─ type: Block
+   │  │  │  │     │                    │  └─ statements
+   │  │  │  │     │                    │     ├─ 0
+   │  │  │  │     │                    │     │  ├─ type: ExpressionStatement
+   │  │  │  │     │                    │     │  └─ expression
+   │  │  │  │     │                    │     │     ├─ type: BinaryOperation
+   │  │  │  │     │                    │     │     ├─ operator: =
+   │  │  │  │     │                    │     │     ├─ left
+   │  │  │  │     │                    │     │     │  ├─ type: Identifier
+   │  │  │  │     │                    │     │     │  └─ name: tempCounting
+   │  │  │  │     │                    │     │     └─ right
+   │  │  │  │     │                    │     │        ├─ type: IndexAccess
+   │  │  │  │     │                    │     │        ├─ base
+   │  │  │  │     │                    │     │        │  ├─ type: Identifier
+   │  │  │  │     │                    │     │        │  └─ name: sortedCountResult
+   │  │  │  │     │                    │     │        └─ index
+   │  │  │  │     │                    │     │           ├─ type: Identifier
+   │  │  │  │     │                    │     │           └─ name: i
+   │  │  │  │     │                    │     ├─ 1
+   │  │  │  │     │                    │     │  ├─ type: ExpressionStatement
+   │  │  │  │     │                    │     │  └─ expression
+   │  │  │  │     │                    │     │     ├─ type: BinaryOperation
+   │  │  │  │     │                    │     │     ├─ operator: =
+   │  │  │  │     │                    │     │     ├─ left
+   │  │  │  │     │                    │     │     │  ├─ type: IndexAccess
+   │  │  │  │     │                    │     │     │  ├─ base
+   │  │  │  │     │                    │     │     │  │  ├─ type: Identifier
+   │  │  │  │     │                    │     │     │  │  └─ name: sortedCountResult
+   │  │  │  │     │                    │     │     │  └─ index
+   │  │  │  │     │                    │     │     │     ├─ type: Identifier
+   │  │  │  │     │                    │     │     │     └─ name: i
+   │  │  │  │     │                    │     │     └─ right
+   │  │  │  │     │                    │     │        ├─ type: IndexAccess
+   │  │  │  │     │                    │     │        ├─ base
+   │  │  │  │     │                    │     │        │  ├─ type: Identifier
+   │  │  │  │     │                    │     │        │  └─ name: sortedCountResult
+   │  │  │  │     │                    │     │        └─ index
+   │  │  │  │     │                    │     │           ├─ type: Identifier
+   │  │  │  │     │                    │     │           └─ name: j
+   │  │  │  │     │                    │     └─ 2
+   │  │  │  │     │                    │        ├─ type: ExpressionStatement
+   │  │  │  │     │                    │        └─ expression
+   │  │  │  │     │                    │           ├─ type: BinaryOperation
+   │  │  │  │     │                    │           ├─ operator: =
+   │  │  │  │     │                    │           ├─ left
+   │  │  │  │     │                    │           │  ├─ type: IndexAccess
+   │  │  │  │     │                    │           │  ├─ base
+   │  │  │  │     │                    │           │  │  ├─ type: Identifier
+   │  │  │  │     │                    │           │  │  └─ name: sortedCountResult
+   │  │  │  │     │                    │           │  └─ index
+   │  │  │  │     │                    │           │     ├─ type: Identifier
+   │  │  │  │     │                    │           │     └─ name: j
+   │  │  │  │     │                    │           └─ right
+   │  │  │  │     │                    │              ├─ type: FunctionCall
+   │  │  │  │     │                    │              ├─ expression
+   │  │  │  │     │                    │              │  ├─ type: Identifier
+   │  │  │  │     │                    │              │  └─ name: VoteCounting
+   │  │  │  │     │                    │              ├─ arguments
+   │  │  │  │     │                    │              │  ├─ 0
+   │  │  │  │     │                    │              │  │  ├─ type: MemberAccess
+   │  │  │  │     │                    │              │  │  ├─ expression
+   │  │  │  │     │                    │              │  │  │  ├─ type: Identifier
+   │  │  │  │     │                    │              │  │  │  └─ name: tempCounting
+   │  │  │  │     │                    │              │  │  └─ memberName: voteID
+   │  │  │  │     │                    │              │  └─ 1
+   │  │  │  │     │                    │              │     ├─ type: MemberAccess
+   │  │  │  │     │                    │              │     ├─ expression
+   │  │  │  │     │                    │              │     │  ├─ type: Identifier
+   │  │  │  │     │                    │              │     │  └─ name: tempCounting
+   │  │  │  │     │                    │              │     └─ memberName: voteCount
+   │  │  │  │     │                    │              ├─ names
+   │  │  │  │     │                    │              └─ identifiers
+   │  │  │  │     │                    └─ falseBody
+   │  │  │  │     └─ 4
+   │  │  │  │        ├─ type: ReturnStatement
+   │  │  │  │        └─ expression
+   │  │  │  │           ├─ type: Identifier
+   │  │  │  │           └─ name: sortedCountResult
+   │  │  │  ├─ visibility: external
+   │  │  │  ├─ modifiers
+   │  │  │  ├─ override
+   │  │  │  ├─ isConstructor: false
+   │  │  │  ├─ isReceiveEther: false
+   │  │  │  ├─ isFallback: false
+   │  │  │  ├─ isVirtual: false
+   │  │  │  └─ stateMutability: view
+   │  │  ├─ 4
+   │  │  │  ├─ type: FunctionDefinition
+   │  │  │  ├─ name: isValidSignature
+   │  │  │  ├─ parameters
+   │  │  │  │  ├─ 0
+   │  │  │  │  │  ├─ type: VariableDeclaration
+   │  │  │  │  │  ├─ typeName
+   │  │  │  │  │  │  ├─ type: ElementaryTypeName
+   │  │  │  │  │  │  ├─ name: bytes32
+   │  │  │  │  │  │  └─ stateMutability
+   │  │  │  │  │  ├─ name: hash
+   │  │  │  │  │  ├─ identifier
+   │  │  │  │  │  │  ├─ type: Identifier
+   │  │  │  │  │  │  └─ name: hash
+   │  │  │  │  │  ├─ storageLocation
+   │  │  │  │  │  ├─ isStateVar: false
+   │  │  │  │  │  ├─ isIndexed: false
+   │  │  │  │  │  └─ expression
+   │  │  │  │  └─ 1
+   │  │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     ├─ typeName
+   │  │  │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  ├─ name: bytes
+   │  │  │  │     │  └─ stateMutability
+   │  │  │  │     ├─ name: signature
+   │  │  │  │     ├─ identifier
+   │  │  │  │     │  ├─ type: Identifier
+   │  │  │  │     │  └─ name: signature
+   │  │  │  │     ├─ storageLocation: calldata
+   │  │  │  │     ├─ isStateVar: false
+   │  │  │  │     ├─ isIndexed: false
+   │  │  │  │     └─ expression
+   │  │  │  ├─ returnParameters
+   │  │  │  │  └─ 0
+   │  │  │  │     ├─ type: VariableDeclaration
+   │  │  │  │     ├─ typeName
+   │  │  │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  ├─ name: bytes4
+   │  │  │  │     │  └─ stateMutability
+   │  │  │  │     ├─ name
+   │  │  │  │     ├─ identifier
+   │  │  │  │     ├─ storageLocation
+   │  │  │  │     ├─ isStateVar: false
+   │  │  │  │     ├─ isIndexed: false
+   │  │  │  │     └─ expression
+   │  │  │  ├─ body
+   │  │  │  │  ├─ type: Block
+   │  │  │  │  └─ statements
+   │  │  │  │     ├─ 0
+   │  │  │  │     │  ├─ type: VariableDeclarationStatement
+   │  │  │  │     │  ├─ variables
+   │  │  │  │     │  │  └─ 0
+   │  │  │  │     │  │     ├─ type: VariableDeclaration
+   │  │  │  │     │  │     ├─ typeName
+   │  │  │  │     │  │     │  ├─ type: ElementaryTypeName
+   │  │  │  │     │  │     │  ├─ name: address
+   │  │  │  │     │  │     │  └─ stateMutability
+   │  │  │  │     │  │     ├─ name: signer
+   │  │  │  │     │  │     ├─ identifier
+   │  │  │  │     │  │     │  ├─ type: Identifier
+   │  │  │  │     │  │     │  └─ name: signer
+   │  │  │  │     │  │     ├─ storageLocation
+   │  │  │  │     │  │     ├─ isStateVar: false
+   │  │  │  │     │  │     ├─ isIndexed: false
+   │  │  │  │     │  │     └─ expression
+   │  │  │  │     │  └─ initialValue
+   │  │  │  │     │     ├─ type: FunctionCall
+   │  │  │  │     │     ├─ expression
+   │  │  │  │     │     │  ├─ type: Identifier
+   │  │  │  │     │     │  └─ name: recoverSignature
+   │  │  │  │     │     ├─ arguments
+   │  │  │  │     │     │  ├─ 0
+   │  │  │  │     │     │  │  ├─ type: Identifier
+   │  │  │  │     │     │  │  └─ name: hash
+   │  │  │  │     │     │  └─ 1
+   │  │  │  │     │     │     ├─ type: Identifier
+   │  │  │  │     │     │     └─ name: signature
+   │  │  │  │     │     ├─ names
+   │  │  │  │     │     └─ identifiers
+   │  │  │  │     └─ 1
+   │  │  │  │        ├─ type: IfStatement
+   │  │  │  │        ├─ condition
+   │  │  │  │        │  ├─ type: BinaryOperation
+   │  │  │  │        │  ├─ operator: ==
+   │  │  │  │        │  ├─ left
+   │  │  │  │        │  │  ├─ type: Identifier
+   │  │  │  │        │  │  └─ name: signer
+   │  │  │  │        │  └─ right
+   │  │  │  │        │     ├─ type: Identifier
+   │  │  │  │        │     └─ name: TRUSTED_ACCOUNT
+   │  │  │  │        ├─ trueBody
+   │  │  │  │        │  ├─ type: Block
+   │  │  │  │        │  └─ statements
+   │  │  │  │        │     └─ 0
+   │  │  │  │        │        ├─ type: ReturnStatement
+   │  │  │  │        │        └─ expression
+   │  │  │  │        │           ├─ type: NumberLiteral
+   │  │  │  │        │           ├─ number: 0x1626ba7e
+   │  │  │  │        │           └─ subdenomination
+   │  │  │  │        └─ falseBody
+   │  │  │  │           ├─ type: Block
+   │  │  │  │           └─ statements
+   │  │  │  │              └─ 0
+   │  │  │  │                 ├─ type: ReturnStatement
+   │  │  │  │                 └─ expression
+   │  │  │  │                    ├─ type: NumberLiteral
+   │  │  │  │                    ├─ number: 0xffffffff
+   │  │  │  │                    └─ subdenomination
+   │  │  │  ├─ visibility: external
+   │  │  │  ├─ modifiers
+   │  │  │  ├─ override
+   │  │  │  ├─ isConstructor: false
+   │  │  │  ├─ isReceiveEther: false
+   │  │  │  ├─ isFallback: false
+   │  │  │  ├─ isVirtual: false
+   │  │  │  └─ stateMutability: view
+   │  │  └─ 5
+   │  │     ├─ type: FunctionDefinition
+   │  │     ├─ name: recoverSignature
+   │  │     ├─ parameters
+   │  │     │  ├─ 0
+   │  │     │  │  ├─ type: VariableDeclaration
+   │  │     │  │  ├─ typeName
+   │  │     │  │  │  ├─ type: ElementaryTypeName
+   │  │     │  │  │  ├─ name: bytes32
+   │  │     │  │  │  └─ stateMutability
+   │  │     │  │  ├─ name: hash
+   │  │     │  │  ├─ identifier
+   │  │     │  │  │  ├─ type: Identifier
+   │  │     │  │  │  └─ name: hash
+   │  │     │  │  ├─ storageLocation
+   │  │     │  │  ├─ isStateVar: false
+   │  │     │  │  ├─ isIndexed: false
+   │  │     │  │  └─ expression
+   │  │     │  └─ 1
+   │  │     │     ├─ type: VariableDeclaration
+   │  │     │     ├─ typeName
+   │  │     │     │  ├─ type: ElementaryTypeName
+   │  │     │     │  ├─ name: bytes
+   │  │     │     │  └─ stateMutability
+   │  │     │     ├─ name: signature
+   │  │     │     ├─ identifier
+   │  │     │     │  ├─ type: Identifier
+   │  │     │     │  └─ name: signature
+   │  │     │     ├─ storageLocation: memory
+   │  │     │     ├─ isStateVar: false
+   │  │     │     ├─ isIndexed: false
+   │  │     │     └─ expression
+   │  │     ├─ returnParameters
+   │  │     │  └─ 0
+   │  │     │     ├─ type: VariableDeclaration
+   │  │     │     ├─ typeName
+   │  │     │     │  ├─ type: ElementaryTypeName
+   │  │     │     │  ├─ name: address
+   │  │     │     │  └─ stateMutability
+   │  │     │     ├─ name
+   │  │     │     ├─ identifier
+   │  │     │     ├─ storageLocation
+   │  │     │     ├─ isStateVar: false
+   │  │     │     ├─ isIndexed: false
+   │  │     │     └─ expression
+   │  │     ├─ body
+   │  │     │  ├─ type: Block
+   │  │     │  └─ statements
+   │  │     │     ├─ 0
+   │  │     │     │  ├─ type: ExpressionStatement
+   │  │     │     │  └─ expression
+   │  │     │     │     ├─ type: FunctionCall
+   │  │     │     │     ├─ expression
+   │  │     │     │     │  ├─ type: Identifier
+   │  │     │     │     │  └─ name: require
+   │  │     │     │     ├─ arguments
+   │  │     │     │     │  ├─ 0
+   │  │     │     │     │  │  ├─ type: BinaryOperation
+   │  │     │     │     │  │  ├─ operator: ==
+   │  │     │     │     │  │  ├─ left
+   │  │     │     │     │  │  │  ├─ type: MemberAccess
+   │  │     │     │     │  │  │  ├─ expression
+   │  │     │     │     │  │  │  │  ├─ type: Identifier
+   │  │     │     │     │  │  │  │  └─ name: signature
+   │  │     │     │     │  │  │  └─ memberName: length
+   │  │     │     │     │  │  └─ right
+   │  │     │     │     │  │     ├─ type: NumberLiteral
+   │  │     │     │     │  │     ├─ number: 65
+   │  │     │     │     │  │     └─ subdenomination
+   │  │     │     │     │  └─ 1
+   │  │     │     │     │     ├─ type: StringLiteral
+   │  │     │     │     │     ├─ value: 01
+   │  │     │     │     │     ├─ parts
+   │  │     │     │     │     │  └─ 0: 01
+   │  │     │     │     │     └─ isUnicode
+   │  │     │     │     │        └─ 0: false
+   │  │     │     │     ├─ names
+   │  │     │     │     └─ identifiers
+   │  │     │     ├─ 1
+   │  │     │     │  ├─ type: VariableDeclarationStatement
+   │  │     │     │  ├─ variables
+   │  │     │     │  │  └─ 0
+   │  │     │     │  │     ├─ type: VariableDeclaration
+   │  │     │     │  │     ├─ typeName
+   │  │     │     │  │     │  ├─ type: ElementaryTypeName
+   │  │     │     │  │     │  ├─ name: uint8
+   │  │     │     │  │     │  └─ stateMutability
+   │  │     │     │  │     ├─ name: v
+   │  │     │     │  │     ├─ identifier
+   │  │     │     │  │     │  ├─ type: Identifier
+   │  │     │     │  │     │  └─ name: v
+   │  │     │     │  │     ├─ storageLocation
+   │  │     │     │  │     ├─ isStateVar: false
+   │  │     │     │  │     ├─ isIndexed: false
+   │  │     │     │  │     └─ expression
+   │  │     │     │  └─ initialValue
+   │  │     │     │     ├─ type: FunctionCall
+   │  │     │     │     ├─ expression
+   │  │     │     │     │  ├─ type: ElementaryTypeName
+   │  │     │     │     │  ├─ name: uint8
+   │  │     │     │     │  └─ stateMutability
+   │  │     │     │     ├─ arguments
+   │  │     │     │     │  └─ 0
+   │  │     │     │     │     ├─ type: IndexAccess
+   │  │     │     │     │     ├─ base
+   │  │     │     │     │     │  ├─ type: Identifier
+   │  │     │     │     │     │  └─ name: signature
+   │  │     │     │     │     └─ index
+   │  │     │     │     │        ├─ type: NumberLiteral
+   │  │     │     │     │        ├─ number: 64
+   │  │     │     │     │        └─ subdenomination
+   │  │     │     │     ├─ names
+   │  │     │     │     └─ identifiers
+   │  │     │     ├─ 2
+   │  │     │     │  ├─ type: VariableDeclarationStatement
+   │  │     │     │  ├─ variables
+   │  │     │     │  │  └─ 0
+   │  │     │     │  │     ├─ type: VariableDeclaration
+   │  │     │     │  │     ├─ typeName
+   │  │     │     │  │     │  ├─ type: ElementaryTypeName
+   │  │     │     │  │     │  ├─ name: bytes32
+   │  │     │     │  │     │  └─ stateMutability
+   │  │     │     │  │     ├─ name: r
+   │  │     │     │  │     ├─ identifier
+   │  │     │     │  │     │  ├─ type: Identifier
+   │  │     │     │  │     │  └─ name: r
+   │  │     │     │  │     ├─ storageLocation
+   │  │     │     │  │     ├─ isStateVar: false
+   │  │     │     │  │     ├─ isIndexed: false
+   │  │     │     │  │     └─ expression
+   │  │     │     │  └─ initialValue
+   │  │     │     ├─ 3
+   │  │     │     │  ├─ type: VariableDeclarationStatement
+   │  │     │     │  ├─ variables
+   │  │     │     │  │  └─ 0
+   │  │     │     │  │     ├─ type: VariableDeclaration
+   │  │     │     │  │     ├─ typeName
+   │  │     │     │  │     │  ├─ type: ElementaryTypeName
+   │  │     │     │  │     │  ├─ name: bytes32
+   │  │     │     │  │     │  └─ stateMutability
+   │  │     │     │  │     ├─ name: s
+   │  │     │     │  │     ├─ identifier
+   │  │     │     │  │     │  ├─ type: Identifier
+   │  │     │     │  │     │  └─ name: s
+   │  │     │     │  │     ├─ storageLocation
+   │  │     │     │  │     ├─ isStateVar: false
+   │  │     │     │  │     ├─ isIndexed: false
+   │  │     │     │  │     └─ expression
+   │  │     │     │  └─ initialValue
+   │  │     │     ├─ 4
+   │  │     │     │  ├─ type: InlineAssemblyStatement
+   │  │     │     │  ├─ language
+   │  │     │     │  ├─ flags
+   │  │     │     │  └─ body
+   │  │     │     │     ├─ type: AssemblyBlock
+   │  │     │     │     └─ operations
+   │  │     │     │        ├─ 0
+   │  │     │     │        │  ├─ type: AssemblyAssignment
+   │  │     │     │        │  ├─ names
+   │  │     │     │        │  │  └─ 0
+   │  │     │     │        │  │     ├─ type: Identifier
+   │  │     │     │        │  │     └─ name: r
+   │  │     │     │        │  └─ expression
+   │  │     │     │        │     ├─ type: AssemblyCall
+   │  │     │     │        │     ├─ functionName: mload
+   │  │     │     │        │     └─ arguments
+   │  │     │     │        │        └─ 0
+   │  │     │     │        │           ├─ type: AssemblyCall
+   │  │     │     │        │           ├─ functionName: add
+   │  │     │     │        │           └─ arguments
+   │  │     │     │        │              ├─ 0
+   │  │     │     │        │              │  ├─ type: AssemblyCall
+   │  │     │     │        │              │  ├─ functionName: signature
+   │  │     │     │        │              │  └─ arguments
+   │  │     │     │        │              └─ 1
+   │  │     │     │        │                 ├─ type: HexNumber
+   │  │     │     │        │                 └─ value: 0x20
+   │  │     │     │        └─ 1
+   │  │     │     │           ├─ type: AssemblyAssignment
+   │  │     │     │           ├─ names
+   │  │     │     │           │  └─ 0
+   │  │     │     │           │     ├─ type: Identifier
+   │  │     │     │           │     └─ name: s
+   │  │     │     │           └─ expression
+   │  │     │     │              ├─ type: AssemblyCall
+   │  │     │     │              ├─ functionName: mload
+   │  │     │     │              └─ arguments
+   │  │     │     │                 └─ 0
+   │  │     │     │                    ├─ type: AssemblyCall
+   │  │     │     │                    ├─ functionName: add
+   │  │     │     │                    └─ arguments
+   │  │     │     │                       ├─ 0
+   │  │     │     │                       │  ├─ type: AssemblyCall
+   │  │     │     │                       │  ├─ functionName: signature
+   │  │     │     │                       │  └─ arguments
+   │  │     │     │                       └─ 1
+   │  │     │     │                          ├─ type: HexNumber
+   │  │     │     │                          └─ value: 0x40
+   │  │     │     ├─ 5
+   │  │     │     │  ├─ type: ExpressionStatement
+   │  │     │     │  └─ expression
+   │  │     │     │     ├─ type: FunctionCall
+   │  │     │     │     ├─ expression
+   │  │     │     │     │  ├─ type: Identifier
+   │  │     │     │     │  └─ name: require
+   │  │     │     │     ├─ arguments
+   │  │     │     │     │  ├─ 0
+   │  │     │     │     │  │  ├─ type: BinaryOperation
+   │  │     │     │     │  │  ├─ operator: <=
+   │  │     │     │     │  │  ├─ left
+   │  │     │     │     │  │  │  ├─ type: FunctionCall
+   │  │     │     │     │  │  │  ├─ expression
+   │  │     │     │     │  │  │  │  ├─ type: ElementaryTypeName
+   │  │     │     │     │  │  │  │  ├─ name: uint256
+   │  │     │     │     │  │  │  │  └─ stateMutability
+   │  │     │     │     │  │  │  ├─ arguments
+   │  │     │     │     │  │  │  │  └─ 0
+   │  │     │     │     │  │  │  │     ├─ type: Identifier
+   │  │     │     │     │  │  │  │     └─ name: s
+   │  │     │     │     │  │  │  ├─ names
+   │  │     │     │     │  │  │  └─ identifiers
+   │  │     │     │     │  │  └─ right
+   │  │     │     │     │  │     ├─ type: NumberLiteral
+   │  │     │     │     │  │     ├─ number: 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0
+   │  │     │     │     │  │     └─ subdenomination
+   │  │     │     │     │  └─ 1
+   │  │     │     │     │     ├─ type: StringLiteral
+   │  │     │     │     │     ├─ value: 02
+   │  │     │     │     │     ├─ parts
+   │  │     │     │     │     │  └─ 0: 02
+   │  │     │     │     │     └─ isUnicode
+   │  │     │     │     │        └─ 0: false
+   │  │     │     │     ├─ names
+   │  │     │     │     └─ identifiers
+   │  │     │     ├─ 6
+   │  │     │     │  ├─ type: ExpressionStatement
+   │  │     │     │  └─ expression
+   │  │     │     │     ├─ type: FunctionCall
+   │  │     │     │     ├─ expression
+   │  │     │     │     │  ├─ type: Identifier
+   │  │     │     │     │  └─ name: require
+   │  │     │     │     ├─ arguments
+   │  │     │     │     │  ├─ 0
+   │  │     │     │     │  │  ├─ type: BinaryOperation
+   │  │     │     │     │  │  ├─ operator: ||
+   │  │     │     │     │  │  ├─ left
+   │  │     │     │     │  │  │  ├─ type: BinaryOperation
+   │  │     │     │     │  │  │  ├─ operator: ==
+   │  │     │     │     │  │  │  ├─ left
+   │  │     │     │     │  │  │  │  ├─ type: Identifier
+   │  │     │     │     │  │  │  │  └─ name: v
+   │  │     │     │     │  │  │  └─ right
+   │  │     │     │     │  │  │     ├─ type: NumberLiteral
+   │  │     │     │     │  │  │     ├─ number: 27
+   │  │     │     │     │  │  │     └─ subdenomination
+   │  │     │     │     │  │  └─ right
+   │  │     │     │     │  │     ├─ type: BinaryOperation
+   │  │     │     │     │  │     ├─ operator: ==
+   │  │     │     │     │  │     ├─ left
+   │  │     │     │     │  │     │  ├─ type: Identifier
+   │  │     │     │     │  │     │  └─ name: v
+   │  │     │     │     │  │     └─ right
+   │  │     │     │     │  │        ├─ type: NumberLiteral
+   │  │     │     │     │  │        ├─ number: 28
+   │  │     │     │     │  │        └─ subdenomination
+   │  │     │     │     │  └─ 1
+   │  │     │     │     │     ├─ type: StringLiteral
+   │  │     │     │     │     ├─ value: 03
+   │  │     │     │     │     ├─ parts
+   │  │     │     │     │     │  └─ 0: 03
+   │  │     │     │     │     └─ isUnicode
+   │  │     │     │     │        └─ 0: false
+   │  │     │     │     ├─ names
+   │  │     │     │     └─ identifiers
+   │  │     │     ├─ 7
+   │  │     │     │  ├─ type: VariableDeclarationStatement
+   │  │     │     │  ├─ variables
+   │  │     │     │  │  └─ 0
+   │  │     │     │  │     ├─ type: VariableDeclaration
+   │  │     │     │  │     ├─ typeName
+   │  │     │     │  │     │  ├─ type: ElementaryTypeName
+   │  │     │     │  │     │  ├─ name: address
+   │  │     │     │  │     │  └─ stateMutability
+   │  │     │     │  │     ├─ name: signer
+   │  │     │     │  │     ├─ identifier
+   │  │     │     │  │     │  ├─ type: Identifier
+   │  │     │     │  │     │  └─ name: signer
+   │  │     │     │  │     ├─ storageLocation
+   │  │     │     │  │     ├─ isStateVar: false
+   │  │     │     │  │     ├─ isIndexed: false
+   │  │     │     │  │     └─ expression
+   │  │     │     │  └─ initialValue
+   │  │     │     │     ├─ type: FunctionCall
+   │  │     │     │     ├─ expression
+   │  │     │     │     │  ├─ type: Identifier
+   │  │     │     │     │  └─ name: ecrecover
+   │  │     │     │     ├─ arguments
+   │  │     │     │     │  ├─ 0
+   │  │     │     │     │  │  ├─ type: Identifier
+   │  │     │     │     │  │  └─ name: hash
+   │  │     │     │     │  ├─ 1
+   │  │     │     │     │  │  ├─ type: Identifier
+   │  │     │     │     │  │  └─ name: v
+   │  │     │     │     │  ├─ 2
+   │  │     │     │     │  │  ├─ type: Identifier
+   │  │     │     │     │  │  └─ name: r
+   │  │     │     │     │  └─ 3
+   │  │     │     │     │     ├─ type: Identifier
+   │  │     │     │     │     └─ name: s
+   │  │     │     │     ├─ names
+   │  │     │     │     └─ identifiers
+   │  │     │     ├─ 8
+   │  │     │     │  ├─ type: ExpressionStatement
+   │  │     │     │  └─ expression
+   │  │     │     │     ├─ type: FunctionCall
+   │  │     │     │     ├─ expression
+   │  │     │     │     │  ├─ type: Identifier
+   │  │     │     │     │  └─ name: require
+   │  │     │     │     ├─ arguments
+   │  │     │     │     │  ├─ 0
+   │  │     │     │     │  │  ├─ type: BinaryOperation
+   │  │     │     │     │  │  ├─ operator: !=
+   │  │     │     │     │  │  ├─ left
+   │  │     │     │     │  │  │  ├─ type: Identifier
+   │  │     │     │     │  │  │  └─ name: signer
+   │  │     │     │     │  │  └─ right
+   │  │     │     │     │  │     ├─ type: FunctionCall
+   │  │     │     │     │  │     ├─ expression
+   │  │     │     │     │  │     │  ├─ type: ElementaryTypeName
+   │  │     │     │     │  │     │  ├─ name: address
+   │  │     │     │     │  │     │  └─ stateMutability
+   │  │     │     │     │  │     ├─ arguments
+   │  │     │     │     │  │     │  └─ 0
+   │  │     │     │     │  │     │     ├─ type: NumberLiteral
+   │  │     │     │     │  │     │     ├─ number: 0x0
+   │  │     │     │     │  │     │     └─ subdenomination
+   │  │     │     │     │  │     ├─ names
+   │  │     │     │     │  │     └─ identifiers
+   │  │     │     │     │  └─ 1
+   │  │     │     │     │     ├─ type: StringLiteral
+   │  │     │     │     │     ├─ value: 04
+   │  │     │     │     │     ├─ parts
+   │  │     │     │     │     │  └─ 0: 04
+   │  │     │     │     │     └─ isUnicode
+   │  │     │     │     │        └─ 0: false
+   │  │     │     │     ├─ names
+   │  │     │     │     └─ identifiers
+   │  │     │     └─ 9
+   │  │     │        ├─ type: ReturnStatement
+   │  │     │        └─ expression
+   │  │     │           ├─ type: Identifier
+   │  │     │           └─ name: signer
+   │  │     ├─ visibility: public
+   │  │     ├─ modifiers
+   │  │     ├─ override
+   │  │     ├─ isConstructor: false
+   │  │     ├─ isReceiveEther: false
+   │  │     ├─ isFallback: false
+   │  │     ├─ isVirtual: false
+   │  │     └─ stateMutability: pure
+   │  └─ kind: library
+   └─ 2
+      ├─ type: ContractDefinition
+      ├─ name: VoteSystem
+      ├─ baseContracts
+      ├─ subNodes
+      │  ├─ 0
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: TRUSTED_ACCOUNT
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: TRUSTED_ACCOUNT
+      │  │  │     ├─ expression
+      │  │  │     │  ├─ type: NumberLiteral
+      │  │  │     │  ├─ number: 0xF3ca7784b075Bbc683Aaeb18C11E47E5ee3f3350
+      │  │  │     │  └─ subdenomination
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: true
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  │     ├─ type: NumberLiteral
+      │  │     ├─ number: 0xF3ca7784b075Bbc683Aaeb18C11E47E5ee3f3350
+      │  │     └─ subdenomination
+      │  ├─ 1
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: startOfVotePeriod
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: startOfVotePeriod
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 2
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: endOfVotePeriod
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: endOfVotePeriod
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 3
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: candidateCounter
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: candidateCounter
+      │  │  │     ├─ expression
+      │  │  │     │  ├─ type: NumberLiteral
+      │  │  │     │  ├─ number: 0
+      │  │  │     │  └─ subdenomination
+      │  │  │     ├─ visibility: public
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  │     ├─ type: NumberLiteral
+      │  │     ├─ number: 0
+      │  │     └─ subdenomination
+      │  ├─ 4
+      │  │  ├─ type: StructDefinition
+      │  │  ├─ name: Candidate
+      │  │  └─ members
+      │  │     ├─ 0
+      │  │     │  ├─ type: VariableDeclaration
+      │  │     │  ├─ typeName
+      │  │     │  │  ├─ type: ElementaryTypeName
+      │  │     │  │  ├─ name: bytes
+      │  │     │  │  └─ stateMutability
+      │  │     │  ├─ name: firstname
+      │  │     │  ├─ identifier
+      │  │     │  │  ├─ type: Identifier
+      │  │     │  │  └─ name: firstname
+      │  │     │  ├─ storageLocation
+      │  │     │  ├─ isStateVar: false
+      │  │     │  ├─ isIndexed: false
+      │  │     │  └─ expression
+      │  │     ├─ 1
+      │  │     │  ├─ type: VariableDeclaration
+      │  │     │  ├─ typeName
+      │  │     │  │  ├─ type: ElementaryTypeName
+      │  │     │  │  ├─ name: bytes
+      │  │     │  │  └─ stateMutability
+      │  │     │  ├─ name: lastname
+      │  │     │  ├─ identifier
+      │  │     │  │  ├─ type: Identifier
+      │  │     │  │  └─ name: lastname
+      │  │     │  ├─ storageLocation
+      │  │     │  ├─ isStateVar: false
+      │  │     │  ├─ isIndexed: false
+      │  │     │  └─ expression
+      │  │     ├─ 2
+      │  │     │  ├─ type: VariableDeclaration
+      │  │     │  ├─ typeName
+      │  │     │  │  ├─ type: ElementaryTypeName
+      │  │     │  │  ├─ name: uint40
+      │  │     │  │  └─ stateMutability
+      │  │     │  ├─ name: id
+      │  │     │  ├─ identifier
+      │  │     │  │  ├─ type: Identifier
+      │  │     │  │  └─ name: id
+      │  │     │  ├─ storageLocation
+      │  │     │  ├─ isStateVar: false
+      │  │     │  ├─ isIndexed: false
+      │  │     │  └─ expression
+      │  │     ├─ 3
+      │  │     │  ├─ type: VariableDeclaration
+      │  │     │  ├─ typeName
+      │  │     │  │  ├─ type: ElementaryTypeName
+      │  │     │  │  ├─ name: uint8
+      │  │     │  │  └─ stateMutability
+      │  │     │  ├─ name: voteID
+      │  │     │  ├─ identifier
+      │  │     │  │  ├─ type: Identifier
+      │  │     │  │  └─ name: voteID
+      │  │     │  ├─ storageLocation
+      │  │     │  ├─ isStateVar: false
+      │  │     │  ├─ isIndexed: false
+      │  │     │  └─ expression
+      │  │     └─ 4
+      │  │        ├─ type: VariableDeclaration
+      │  │        ├─ typeName
+      │  │        │  ├─ type: ElementaryTypeName
+      │  │        │  ├─ name: uint
+      │  │        │  └─ stateMutability
+      │  │        ├─ name: voteCount
+      │  │        ├─ identifier
+      │  │        │  ├─ type: Identifier
+      │  │        │  └─ name: voteCount
+      │  │        ├─ storageLocation
+      │  │        ├─ isStateVar: false
+      │  │        ├─ isIndexed: false
+      │  │        └─ expression
+      │  ├─ 5
+      │  │  ├─ type: EventDefinition
+      │  │  ├─ name: NewCandidateAdded
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: fullname
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: fullname
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint40
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: id
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: id
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint8
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: voteID
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: voteID
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ storageLocation
+      │  │  │     └─ expression
+      │  │  └─ isAnonymous: false
+      │  ├─ 6
+      │  │  ├─ type: EventDefinition
+      │  │  ├─ name: VotePeriodUpdate
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: startAt
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: startAt
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: endAt
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: endAt
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ storageLocation
+      │  │  │     └─ expression
+      │  │  └─ isAnonymous: false
+      │  ├─ 7
+      │  │  ├─ type: EventDefinition
+      │  │  ├─ name: NewVoteTo
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: votedCandidate
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: votedCandidate
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: candidatesVoteID
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: candidatesVoteID
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: voter
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: voter
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ storageLocation
+      │  │  │     └─ expression
+      │  │  └─ isAnonymous: false
+      │  ├─ 8
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: uint8
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: UserDefinedTypeName
+      │  │  │     │     └─ namePath: Candidate
+      │  │  │     ├─ name: candidateList
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: candidateList
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 9
+      │  │  ├─ type: StateVariableDeclaration
+      │  │  ├─ variables
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: Mapping
+      │  │  │     │  ├─ keyType
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  ├─ name: address
+      │  │  │     │  │  └─ stateMutability
+      │  │  │     │  └─ valueType
+      │  │  │     │     ├─ type: ElementaryTypeName
+      │  │  │     │     ├─ name: bool
+      │  │  │     │     └─ stateMutability
+      │  │  │     ├─ name: revoteCheck
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: revoteCheck
+      │  │  │     ├─ expression
+      │  │  │     ├─ visibility: private
+      │  │  │     ├─ isStateVar: true
+      │  │  │     ├─ isDeclaredConst: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     ├─ isImmutable: false
+      │  │  │     ├─ override
+      │  │  │     └─ storageLocation
+      │  │  └─ initialValue
+      │  ├─ 10
+      │  │  ├─ type: ModifierDefinition
+      │  │  ├─ name: onlyTrustedAccount
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: address
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: accountAddress
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: accountAddress
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: TRUSTED_ACCOUNT
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: accountAddress
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 05
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 05
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     └─ 1
+      │  │  │        ├─ type: ExpressionStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: Identifier
+      │  │  │           └─ name: _
+      │  │  ├─ isVirtual: false
+      │  │  └─ override
+      │  ├─ 11
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: addCandidateList
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ArrayTypeName
+      │  │  │     │  ├─ baseTypeName
+      │  │  │     │  │  ├─ type: UserDefinedTypeName
+      │  │  │     │  │  └─ namePath: Candidate
+      │  │  │     │  └─ length
+      │  │  │     ├─ name: listOfCandidates
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: listOfCandidates
+      │  │  │     ├─ storageLocation: calldata
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: candidateCounter
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: NumberLiteral
+      │  │  │     │        ├─ number: 0
+      │  │  │     │        └─ subdenomination
+      │  │  │     └─ 1
+      │  │  │        ├─ type: ForStatement
+      │  │  │        ├─ initExpression
+      │  │  │        │  ├─ type: VariableDeclarationStatement
+      │  │  │        │  ├─ variables
+      │  │  │        │  │  └─ 0
+      │  │  │        │  │     ├─ type: VariableDeclaration
+      │  │  │        │  │     ├─ typeName
+      │  │  │        │  │     │  ├─ type: ElementaryTypeName
+      │  │  │        │  │     │  ├─ name: uint
+      │  │  │        │  │     │  └─ stateMutability
+      │  │  │        │  │     ├─ name: i
+      │  │  │        │  │     ├─ identifier
+      │  │  │        │  │     │  ├─ type: Identifier
+      │  │  │        │  │     │  └─ name: i
+      │  │  │        │  │     ├─ storageLocation
+      │  │  │        │  │     ├─ isStateVar: false
+      │  │  │        │  │     ├─ isIndexed: false
+      │  │  │        │  │     └─ expression
+      │  │  │        │  └─ initialValue
+      │  │  │        │     ├─ type: NumberLiteral
+      │  │  │        │     ├─ number: 0
+      │  │  │        │     └─ subdenomination
+      │  │  │        ├─ conditionExpression
+      │  │  │        │  ├─ type: BinaryOperation
+      │  │  │        │  ├─ operator: <
+      │  │  │        │  ├─ left
+      │  │  │        │  │  ├─ type: Identifier
+      │  │  │        │  │  └─ name: i
+      │  │  │        │  └─ right
+      │  │  │        │     ├─ type: MemberAccess
+      │  │  │        │     ├─ expression
+      │  │  │        │     │  ├─ type: Identifier
+      │  │  │        │     │  └─ name: listOfCandidates
+      │  │  │        │     └─ memberName: length
+      │  │  │        ├─ loopExpression
+      │  │  │        │  ├─ type: ExpressionStatement
+      │  │  │        │  └─ expression
+      │  │  │        │     ├─ type: UnaryOperation
+      │  │  │        │     ├─ operator: ++
+      │  │  │        │     ├─ subExpression
+      │  │  │        │     │  ├─ type: Identifier
+      │  │  │        │     │  └─ name: i
+      │  │  │        │     └─ isPrefix: false
+      │  │  │        └─ body
+      │  │  │           ├─ type: Block
+      │  │  │           └─ statements
+      │  │  │              ├─ 0
+      │  │  │              │  ├─ type: ExpressionStatement
+      │  │  │              │  └─ expression
+      │  │  │              │     ├─ type: BinaryOperation
+      │  │  │              │     ├─ operator: =
+      │  │  │              │     ├─ left
+      │  │  │              │     │  ├─ type: IndexAccess
+      │  │  │              │     │  ├─ base
+      │  │  │              │     │  │  ├─ type: Identifier
+      │  │  │              │     │  │  └─ name: candidateList
+      │  │  │              │     │  └─ index
+      │  │  │              │     │     ├─ type: MemberAccess
+      │  │  │              │     │     ├─ expression
+      │  │  │              │     │     │  ├─ type: IndexAccess
+      │  │  │              │     │     │  ├─ base
+      │  │  │              │     │     │  │  ├─ type: Identifier
+      │  │  │              │     │     │  │  └─ name: listOfCandidates
+      │  │  │              │     │     │  └─ index
+      │  │  │              │     │     │     ├─ type: Identifier
+      │  │  │              │     │     │     └─ name: i
+      │  │  │              │     │     └─ memberName: voteID
+      │  │  │              │     └─ right
+      │  │  │              │        ├─ type: FunctionCall
+      │  │  │              │        ├─ expression
+      │  │  │              │        │  ├─ type: Identifier
+      │  │  │              │        │  └─ name: Candidate
+      │  │  │              │        ├─ arguments
+      │  │  │              │        │  ├─ 0
+      │  │  │              │        │  │  ├─ type: MemberAccess
+      │  │  │              │        │  │  ├─ expression
+      │  │  │              │        │  │  │  ├─ type: IndexAccess
+      │  │  │              │        │  │  │  ├─ base
+      │  │  │              │        │  │  │  │  ├─ type: Identifier
+      │  │  │              │        │  │  │  │  └─ name: listOfCandidates
+      │  │  │              │        │  │  │  └─ index
+      │  │  │              │        │  │  │     ├─ type: Identifier
+      │  │  │              │        │  │  │     └─ name: i
+      │  │  │              │        │  │  └─ memberName: firstname
+      │  │  │              │        │  ├─ 1
+      │  │  │              │        │  │  ├─ type: MemberAccess
+      │  │  │              │        │  │  ├─ expression
+      │  │  │              │        │  │  │  ├─ type: IndexAccess
+      │  │  │              │        │  │  │  ├─ base
+      │  │  │              │        │  │  │  │  ├─ type: Identifier
+      │  │  │              │        │  │  │  │  └─ name: listOfCandidates
+      │  │  │              │        │  │  │  └─ index
+      │  │  │              │        │  │  │     ├─ type: Identifier
+      │  │  │              │        │  │  │     └─ name: i
+      │  │  │              │        │  │  └─ memberName: lastname
+      │  │  │              │        │  ├─ 2
+      │  │  │              │        │  │  ├─ type: MemberAccess
+      │  │  │              │        │  │  ├─ expression
+      │  │  │              │        │  │  │  ├─ type: IndexAccess
+      │  │  │              │        │  │  │  ├─ base
+      │  │  │              │        │  │  │  │  ├─ type: Identifier
+      │  │  │              │        │  │  │  │  └─ name: listOfCandidates
+      │  │  │              │        │  │  │  └─ index
+      │  │  │              │        │  │  │     ├─ type: Identifier
+      │  │  │              │        │  │  │     └─ name: i
+      │  │  │              │        │  │  └─ memberName: id
+      │  │  │              │        │  ├─ 3
+      │  │  │              │        │  │  ├─ type: MemberAccess
+      │  │  │              │        │  │  ├─ expression
+      │  │  │              │        │  │  │  ├─ type: IndexAccess
+      │  │  │              │        │  │  │  ├─ base
+      │  │  │              │        │  │  │  │  ├─ type: Identifier
+      │  │  │              │        │  │  │  │  └─ name: listOfCandidates
+      │  │  │              │        │  │  │  └─ index
+      │  │  │              │        │  │  │     ├─ type: Identifier
+      │  │  │              │        │  │  │     └─ name: i
+      │  │  │              │        │  │  └─ memberName: voteID
+      │  │  │              │        │  └─ 4
+      │  │  │              │        │     ├─ type: MemberAccess
+      │  │  │              │        │     ├─ expression
+      │  │  │              │        │     │  ├─ type: IndexAccess
+      │  │  │              │        │     │  ├─ base
+      │  │  │              │        │     │  │  ├─ type: Identifier
+      │  │  │              │        │     │  │  └─ name: listOfCandidates
+      │  │  │              │        │     │  └─ index
+      │  │  │              │        │     │     ├─ type: Identifier
+      │  │  │              │        │     │     └─ name: i
+      │  │  │              │        │     └─ memberName: voteCount
+      │  │  │              │        ├─ names
+      │  │  │              │        └─ identifiers
+      │  │  │              ├─ 1
+      │  │  │              │  ├─ type: ExpressionStatement
+      │  │  │              │  └─ expression
+      │  │  │              │     ├─ type: UnaryOperation
+      │  │  │              │     ├─ operator: ++
+      │  │  │              │     ├─ subExpression
+      │  │  │              │     │  ├─ type: Identifier
+      │  │  │              │     │  └─ name: candidateCounter
+      │  │  │              │     └─ isPrefix: false
+      │  │  │              └─ 2
+      │  │  │                 ├─ type: EmitStatement
+      │  │  │                 └─ eventCall
+      │  │  │                    ├─ type: FunctionCall
+      │  │  │                    ├─ expression
+      │  │  │                    │  ├─ type: Identifier
+      │  │  │                    │  └─ name: NewCandidateAdded
+      │  │  │                    ├─ arguments
+      │  │  │                    │  ├─ 0
+      │  │  │                    │  │  ├─ type: FunctionCall
+      │  │  │                    │  │  ├─ expression
+      │  │  │                    │  │  │  ├─ type: MemberAccess
+      │  │  │                    │  │  │  ├─ expression
+      │  │  │                    │  │  │  │  ├─ type: Identifier
+      │  │  │                    │  │  │  │  └─ name: abi
+      │  │  │                    │  │  │  └─ memberName: encodePacked
+      │  │  │                    │  │  ├─ arguments
+      │  │  │                    │  │  │  ├─ 0
+      │  │  │                    │  │  │  │  ├─ type: MemberAccess
+      │  │  │                    │  │  │  │  ├─ expression
+      │  │  │                    │  │  │  │  │  ├─ type: IndexAccess
+      │  │  │                    │  │  │  │  │  ├─ base
+      │  │  │                    │  │  │  │  │  │  ├─ type: Identifier
+      │  │  │                    │  │  │  │  │  │  └─ name: listOfCandidates
+      │  │  │                    │  │  │  │  │  └─ index
+      │  │  │                    │  │  │  │  │     ├─ type: Identifier
+      │  │  │                    │  │  │  │  │     └─ name: i
+      │  │  │                    │  │  │  │  └─ memberName: firstname
+      │  │  │                    │  │  │  └─ 1
+      │  │  │                    │  │  │     ├─ type: MemberAccess
+      │  │  │                    │  │  │     ├─ expression
+      │  │  │                    │  │  │     │  ├─ type: IndexAccess
+      │  │  │                    │  │  │     │  ├─ base
+      │  │  │                    │  │  │     │  │  ├─ type: Identifier
+      │  │  │                    │  │  │     │  │  └─ name: listOfCandidates
+      │  │  │                    │  │  │     │  └─ index
+      │  │  │                    │  │  │     │     ├─ type: Identifier
+      │  │  │                    │  │  │     │     └─ name: i
+      │  │  │                    │  │  │     └─ memberName: lastname
+      │  │  │                    │  │  ├─ names
+      │  │  │                    │  │  └─ identifiers
+      │  │  │                    │  ├─ 1
+      │  │  │                    │  │  ├─ type: MemberAccess
+      │  │  │                    │  │  ├─ expression
+      │  │  │                    │  │  │  ├─ type: IndexAccess
+      │  │  │                    │  │  │  ├─ base
+      │  │  │                    │  │  │  │  ├─ type: Identifier
+      │  │  │                    │  │  │  │  └─ name: listOfCandidates
+      │  │  │                    │  │  │  └─ index
+      │  │  │                    │  │  │     ├─ type: Identifier
+      │  │  │                    │  │  │     └─ name: i
+      │  │  │                    │  │  └─ memberName: id
+      │  │  │                    │  └─ 2
+      │  │  │                    │     ├─ type: MemberAccess
+      │  │  │                    │     ├─ expression
+      │  │  │                    │     │  ├─ type: IndexAccess
+      │  │  │                    │     │  ├─ base
+      │  │  │                    │     │  │  ├─ type: Identifier
+      │  │  │                    │     │  │  └─ name: listOfCandidates
+      │  │  │                    │     │  └─ index
+      │  │  │                    │     │     ├─ type: Identifier
+      │  │  │                    │     │     └─ name: i
+      │  │  │                    │     └─ memberName: voteID
+      │  │  │                    ├─ names
+      │  │  │                    └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  │  └─ 0
+      │  │  │     ├─ type: ModifierInvocation
+      │  │  │     ├─ name: onlyTrustedAccount
+      │  │  │     └─ arguments
+      │  │  │        └─ 0
+      │  │  │           ├─ type: MemberAccess
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: msg
+      │  │  │           └─ memberName: sender
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 12
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: viewList
+      │  │  ├─ parameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint8
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: candidateVoteID
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: candidateVoteID
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  │  └─ 0
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: UserDefinedTypeName
+      │  │  │     │  └─ namePath: Candidate
+      │  │  │     ├─ name
+      │  │  │     ├─ identifier
+      │  │  │     ├─ storageLocation: memory
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     └─ 0
+      │  │  │        ├─ type: ReturnStatement
+      │  │  │        └─ expression
+      │  │  │           ├─ type: TupleExpression
+      │  │  │           ├─ components
+      │  │  │           │  └─ 0
+      │  │  │           │     ├─ type: IndexAccess
+      │  │  │           │     ├─ base
+      │  │  │           │     │  ├─ type: Identifier
+      │  │  │           │     │  └─ name: candidateList
+      │  │  │           │     └─ index
+      │  │  │           │        ├─ type: Identifier
+      │  │  │           │        └─ name: candidateVoteID
+      │  │  │           └─ isArray: false
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability: view
+      │  ├─ 13
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: setVotePeriod
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: startTime
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: startTime
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 1
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: uint
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: endTime
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: endTime
+      │  │  │     ├─ storageLocation
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ||
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  ├─ operator: ==
+      │  │  │     │     │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  └─ name: startOfVotePeriod
+      │  │  │     │     │  │  │  └─ right
+      │  │  │     │     │  │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │  │     ├─ number: 0
+      │  │  │     │     │  │  │     └─ subdenomination
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: BinaryOperation
+      │  │  │     │     │  │     ├─ operator: <
+      │  │  │     │     │  │     ├─ left
+      │  │  │     │     │  │     │  ├─ type: MemberAccess
+      │  │  │     │     │  │     │  ├─ expression
+      │  │  │     │     │  │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │     │  │  └─ name: block
+      │  │  │     │     │  │     │  └─ memberName: timestamp
+      │  │  │     │     │  │     └─ right
+      │  │  │     │     │  │        ├─ type: Identifier
+      │  │  │     │     │  │        └─ name: startOfVotePeriod
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 06
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 06
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: startOfVotePeriod
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: startTime
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: endOfVotePeriod
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: Identifier
+      │  │  │     │        └─ name: endTime
+      │  │  │     └─ 3
+      │  │  │        ├─ type: EmitStatement
+      │  │  │        └─ eventCall
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: VotePeriodUpdate
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: Identifier
+      │  │  │           │  │  └─ name: startOfVotePeriod
+      │  │  │           │  └─ 1
+      │  │  │           │     ├─ type: Identifier
+      │  │  │           │     └─ name: endOfVotePeriod
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  │  └─ 0
+      │  │  │     ├─ type: ModifierInvocation
+      │  │  │     ├─ name: onlyTrustedAccount
+      │  │  │     └─ arguments
+      │  │  │        └─ 0
+      │  │  │           ├─ type: MemberAccess
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: msg
+      │  │  │           └─ memberName: sender
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  ├─ 14
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: voteTo
+      │  │  ├─ parameters
+      │  │  │  ├─ 0
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: uint8
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: candidateVoteID
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: candidateVoteID
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  ├─ 1
+      │  │  │  │  ├─ type: VariableDeclaration
+      │  │  │  │  ├─ typeName
+      │  │  │  │  │  ├─ type: ElementaryTypeName
+      │  │  │  │  │  ├─ name: bytes32
+      │  │  │  │  │  └─ stateMutability
+      │  │  │  │  ├─ name: voteHash
+      │  │  │  │  ├─ identifier
+      │  │  │  │  │  ├─ type: Identifier
+      │  │  │  │  │  └─ name: voteHash
+      │  │  │  │  ├─ storageLocation
+      │  │  │  │  ├─ isStateVar: false
+      │  │  │  │  ├─ isIndexed: false
+      │  │  │  │  └─ expression
+      │  │  │  └─ 2
+      │  │  │     ├─ type: VariableDeclaration
+      │  │  │     ├─ typeName
+      │  │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  ├─ name: bytes
+      │  │  │     │  └─ stateMutability
+      │  │  │     ├─ name: trustedAccountSignature
+      │  │  │     ├─ identifier
+      │  │  │     │  ├─ type: Identifier
+      │  │  │     │  └─ name: trustedAccountSignature
+      │  │  │     ├─ storageLocation: calldata
+      │  │  │     ├─ isStateVar: false
+      │  │  │     ├─ isIndexed: false
+      │  │  │     └─ expression
+      │  │  ├─ returnParameters
+      │  │  ├─ body
+      │  │  │  ├─ type: Block
+      │  │  │  └─ statements
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: &&
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  ├─ operator: &&
+      │  │  │     │     │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  │  │  ├─ operator: !=
+      │  │  │     │     │  │  │  │  ├─ left
+      │  │  │     │     │  │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  │  └─ name: startOfVotePeriod
+      │  │  │     │     │  │  │  │  └─ right
+      │  │  │     │     │  │  │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │  │  │     ├─ number: 0
+      │  │  │     │     │  │  │  │     └─ subdenomination
+      │  │  │     │     │  │  │  └─ right
+      │  │  │     │     │  │  │     ├─ type: BinaryOperation
+      │  │  │     │     │  │  │     ├─ operator: >=
+      │  │  │     │     │  │  │     ├─ left
+      │  │  │     │     │  │  │     │  ├─ type: MemberAccess
+      │  │  │     │     │  │  │     │  ├─ expression
+      │  │  │     │     │  │  │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │     │  │  └─ name: block
+      │  │  │     │     │  │  │     │  └─ memberName: timestamp
+      │  │  │     │     │  │  │     └─ right
+      │  │  │     │     │  │  │        ├─ type: Identifier
+      │  │  │     │     │  │  │        └─ name: startOfVotePeriod
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: BinaryOperation
+      │  │  │     │     │  │     ├─ operator: <=
+      │  │  │     │     │  │     ├─ left
+      │  │  │     │     │  │     │  ├─ type: MemberAccess
+      │  │  │     │     │  │     │  ├─ expression
+      │  │  │     │     │  │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │     │  │  └─ name: block
+      │  │  │     │     │  │     │  └─ memberName: timestamp
+      │  │  │     │     │  │     └─ right
+      │  │  │     │     │  │        ├─ type: Identifier
+      │  │  │     │     │  │        └─ name: endOfVotePeriod
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 07
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 07
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: UnaryOperation
+      │  │  │     │     │  │  ├─ operator: !
+      │  │  │     │     │  │  ├─ subExpression
+      │  │  │     │     │  │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  │  ├─ base
+      │  │  │     │     │  │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  │  └─ name: revoteCheck
+      │  │  │     │     │  │  │  └─ index
+      │  │  │     │     │  │  │     ├─ type: MemberAccess
+      │  │  │     │     │  │  │     ├─ expression
+      │  │  │     │     │  │  │     │  ├─ type: Identifier
+      │  │  │     │     │  │  │     │  └─ name: msg
+      │  │  │     │     │  │  │     └─ memberName: sender
+      │  │  │     │     │  │  └─ isPrefix: true
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 08
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 08
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 2
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: bytes4
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: validationResult
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: validationResult
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: MemberAccess
+      │  │  │     │     │  ├─ expression
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: VoteLibrary
+      │  │  │     │     │  └─ memberName: isValidSignature
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: voteHash
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: Identifier
+      │  │  │     │     │     └─ name: trustedAccountSignature
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 3
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: validationResult
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │     ├─ number: 0x1626ba7e
+      │  │  │     │     │  │     └─ subdenomination
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 09
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 09
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 4
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: uint
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: codeSize
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: codeSize
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     ├─ 5
+      │  │  │     │  ├─ type: VariableDeclarationStatement
+      │  │  │     │  ├─ variables
+      │  │  │     │  │  └─ 0
+      │  │  │     │  │     ├─ type: VariableDeclaration
+      │  │  │     │  │     ├─ typeName
+      │  │  │     │  │     │  ├─ type: ElementaryTypeName
+      │  │  │     │  │     │  ├─ name: address
+      │  │  │     │  │     │  └─ stateMutability
+      │  │  │     │  │     ├─ name: msgSender
+      │  │  │     │  │     ├─ identifier
+      │  │  │     │  │     │  ├─ type: Identifier
+      │  │  │     │  │     │  └─ name: msgSender
+      │  │  │     │  │     ├─ storageLocation
+      │  │  │     │  │     ├─ isStateVar: false
+      │  │  │     │  │     ├─ isIndexed: false
+      │  │  │     │  │     └─ expression
+      │  │  │     │  └─ initialValue
+      │  │  │     │     ├─ type: MemberAccess
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: msg
+      │  │  │     │     └─ memberName: sender
+      │  │  │     ├─ 6
+      │  │  │     │  ├─ type: InlineAssemblyStatement
+      │  │  │     │  ├─ language
+      │  │  │     │  ├─ flags
+      │  │  │     │  └─ body
+      │  │  │     │     ├─ type: AssemblyBlock
+      │  │  │     │     └─ operations
+      │  │  │     │        └─ 0
+      │  │  │     │           ├─ type: AssemblyAssignment
+      │  │  │     │           ├─ names
+      │  │  │     │           │  └─ 0
+      │  │  │     │           │     ├─ type: Identifier
+      │  │  │     │           │     └─ name: codeSize
+      │  │  │     │           └─ expression
+      │  │  │     │              ├─ type: AssemblyCall
+      │  │  │     │              ├─ functionName: extcodesize
+      │  │  │     │              └─ arguments
+      │  │  │     │                 └─ 0
+      │  │  │     │                    ├─ type: AssemblyCall
+      │  │  │     │                    ├─ functionName: msgSender
+      │  │  │     │                    └─ arguments
+      │  │  │     ├─ 7
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: FunctionCall
+      │  │  │     │     ├─ expression
+      │  │  │     │     │  ├─ type: Identifier
+      │  │  │     │     │  └─ name: require
+      │  │  │     │     ├─ arguments
+      │  │  │     │     │  ├─ 0
+      │  │  │     │     │  │  ├─ type: BinaryOperation
+      │  │  │     │     │  │  ├─ operator: ==
+      │  │  │     │     │  │  ├─ left
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: codeSize
+      │  │  │     │     │  │  └─ right
+      │  │  │     │     │  │     ├─ type: NumberLiteral
+      │  │  │     │     │  │     ├─ number: 0
+      │  │  │     │     │  │     └─ subdenomination
+      │  │  │     │     │  └─ 1
+      │  │  │     │     │     ├─ type: StringLiteral
+      │  │  │     │     │     ├─ value: 10
+      │  │  │     │     │     ├─ parts
+      │  │  │     │     │     │  └─ 0: 10
+      │  │  │     │     │     └─ isUnicode
+      │  │  │     │     │        └─ 0: false
+      │  │  │     │     ├─ names
+      │  │  │     │     └─ identifiers
+      │  │  │     ├─ 8
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: UnaryOperation
+      │  │  │     │     ├─ operator: ++
+      │  │  │     │     ├─ subExpression
+      │  │  │     │     │  ├─ type: MemberAccess
+      │  │  │     │     │  ├─ expression
+      │  │  │     │     │  │  ├─ type: IndexAccess
+      │  │  │     │     │  │  ├─ base
+      │  │  │     │     │  │  │  ├─ type: Identifier
+      │  │  │     │     │  │  │  └─ name: candidateList
+      │  │  │     │     │  │  └─ index
+      │  │  │     │     │  │     ├─ type: Identifier
+      │  │  │     │     │  │     └─ name: candidateVoteID
+      │  │  │     │     │  └─ memberName: voteCount
+      │  │  │     │     └─ isPrefix: false
+      │  │  │     ├─ 9
+      │  │  │     │  ├─ type: ExpressionStatement
+      │  │  │     │  └─ expression
+      │  │  │     │     ├─ type: BinaryOperation
+      │  │  │     │     ├─ operator: =
+      │  │  │     │     ├─ left
+      │  │  │     │     │  ├─ type: IndexAccess
+      │  │  │     │     │  ├─ base
+      │  │  │     │     │  │  ├─ type: Identifier
+      │  │  │     │     │  │  └─ name: revoteCheck
+      │  │  │     │     │  └─ index
+      │  │  │     │     │     ├─ type: MemberAccess
+      │  │  │     │     │     ├─ expression
+      │  │  │     │     │     │  ├─ type: Identifier
+      │  │  │     │     │     │  └─ name: msg
+      │  │  │     │     │     └─ memberName: sender
+      │  │  │     │     └─ right
+      │  │  │     │        ├─ type: BooleanLiteral
+      │  │  │     │        └─ value: true
+      │  │  │     └─ 10
+      │  │  │        ├─ type: EmitStatement
+      │  │  │        └─ eventCall
+      │  │  │           ├─ type: FunctionCall
+      │  │  │           ├─ expression
+      │  │  │           │  ├─ type: Identifier
+      │  │  │           │  └─ name: NewVoteTo
+      │  │  │           ├─ arguments
+      │  │  │           │  ├─ 0
+      │  │  │           │  │  ├─ type: FunctionCall
+      │  │  │           │  │  ├─ expression
+      │  │  │           │  │  │  ├─ type: MemberAccess
+      │  │  │           │  │  │  ├─ expression
+      │  │  │           │  │  │  │  ├─ type: Identifier
+      │  │  │           │  │  │  │  └─ name: abi
+      │  │  │           │  │  │  └─ memberName: encodePacked
+      │  │  │           │  │  ├─ arguments
+      │  │  │           │  │  │  ├─ 0
+      │  │  │           │  │  │  │  ├─ type: MemberAccess
+      │  │  │           │  │  │  │  ├─ expression
+      │  │  │           │  │  │  │  │  ├─ type: IndexAccess
+      │  │  │           │  │  │  │  │  ├─ base
+      │  │  │           │  │  │  │  │  │  ├─ type: Identifier
+      │  │  │           │  │  │  │  │  │  └─ name: candidateList
+      │  │  │           │  │  │  │  │  └─ index
+      │  │  │           │  │  │  │  │     ├─ type: Identifier
+      │  │  │           │  │  │  │  │     └─ name: candidateVoteID
+      │  │  │           │  │  │  │  └─ memberName: firstname
+      │  │  │           │  │  │  └─ 1
+      │  │  │           │  │  │     ├─ type: MemberAccess
+      │  │  │           │  │  │     ├─ expression
+      │  │  │           │  │  │     │  ├─ type: IndexAccess
+      │  │  │           │  │  │     │  ├─ base
+      │  │  │           │  │  │     │  │  ├─ type: Identifier
+      │  │  │           │  │  │     │  │  └─ name: candidateList
+      │  │  │           │  │  │     │  └─ index
+      │  │  │           │  │  │     │     ├─ type: Identifier
+      │  │  │           │  │  │     │     └─ name: candidateVoteID
+      │  │  │           │  │  │     └─ memberName: lastname
+      │  │  │           │  │  ├─ names
+      │  │  │           │  │  └─ identifiers
+      │  │  │           │  ├─ 1
+      │  │  │           │  │  ├─ type: MemberAccess
+      │  │  │           │  │  ├─ expression
+      │  │  │           │  │  │  ├─ type: IndexAccess
+      │  │  │           │  │  │  ├─ base
+      │  │  │           │  │  │  │  ├─ type: Identifier
+      │  │  │           │  │  │  │  └─ name: candidateList
+      │  │  │           │  │  │  └─ index
+      │  │  │           │  │  │     ├─ type: Identifier
+      │  │  │           │  │  │     └─ name: candidateVoteID
+      │  │  │           │  │  └─ memberName: voteID
+      │  │  │           │  └─ 2
+      │  │  │           │     ├─ type: MemberAccess
+      │  │  │           │     ├─ expression
+      │  │  │           │     │  ├─ type: Identifier
+      │  │  │           │     │  └─ name: msg
+      │  │  │           │     └─ memberName: sender
+      │  │  │           ├─ names
+      │  │  │           └─ identifiers
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ override
+      │  │  ├─ isConstructor: false
+      │  │  ├─ isReceiveEther: false
+      │  │  ├─ isFallback: false
+      │  │  ├─ isVirtual: false
+      │  │  └─ stateMutability
+      │  └─ 15
+      │     ├─ type: FunctionDefinition
+      │     ├─ name: countVote
+      │     ├─ parameters
+      │     ├─ returnParameters
+      │     │  └─ 0
+      │     │     ├─ type: VariableDeclaration
+      │     │     ├─ typeName
+      │     │     │  ├─ type: ArrayTypeName
+      │     │     │  ├─ baseTypeName
+      │     │     │  │  ├─ type: UserDefinedTypeName
+      │     │     │  │  └─ namePath: VoteLibrary.VoteCounting
+      │     │     │  └─ length
+      │     │     ├─ name
+      │     │     ├─ identifier
+      │     │     ├─ storageLocation: memory
+      │     │     ├─ isStateVar: false
+      │     │     ├─ isIndexed: false
+      │     │     └─ expression
+      │     ├─ body
+      │     │  ├─ type: Block
+      │     │  └─ statements
+      │     │     ├─ 0
+      │     │     │  ├─ type: VariableDeclarationStatement
+      │     │     │  ├─ variables
+      │     │     │  │  └─ 0
+      │     │     │  │     ├─ type: VariableDeclaration
+      │     │     │  │     ├─ typeName
+      │     │     │  │     │  ├─ type: ArrayTypeName
+      │     │     │  │     │  ├─ baseTypeName
+      │     │     │  │     │  │  ├─ type: UserDefinedTypeName
+      │     │     │  │     │  │  └─ namePath: VoteLibrary.VoteCounting
+      │     │     │  │     │  └─ length
+      │     │     │  │     ├─ name: voteCountingArray
+      │     │     │  │     ├─ identifier
+      │     │     │  │     │  ├─ type: Identifier
+      │     │     │  │     │  └─ name: voteCountingArray
+      │     │     │  │     ├─ storageLocation: memory
+      │     │     │  │     ├─ isStateVar: false
+      │     │     │  │     ├─ isIndexed: false
+      │     │     │  │     └─ expression
+      │     │     │  └─ initialValue
+      │     │     ├─ 1
+      │     │     │  ├─ type: ExpressionStatement
+      │     │     │  └─ expression
+      │     │     │     ├─ type: BinaryOperation
+      │     │     │     ├─ operator: =
+      │     │     │     ├─ left
+      │     │     │     │  ├─ type: Identifier
+      │     │     │     │  └─ name: voteCountingArray
+      │     │     │     └─ right
+      │     │     │        ├─ type: FunctionCall
+      │     │     │        ├─ expression
+      │     │     │        │  ├─ type: NewExpression
+      │     │     │        │  └─ typeName
+      │     │     │        │     ├─ type: ArrayTypeName
+      │     │     │        │     ├─ baseTypeName
+      │     │     │        │     │  ├─ type: UserDefinedTypeName
+      │     │     │        │     │  └─ namePath: VoteLibrary.VoteCounting
+      │     │     │        │     └─ length
+      │     │     │        ├─ arguments
+      │     │     │        │  └─ 0
+      │     │     │        │     ├─ type: Identifier
+      │     │     │        │     └─ name: candidateCounter
+      │     │     │        ├─ names
+      │     │     │        └─ identifiers
+      │     │     ├─ 2
+      │     │     │  ├─ type: ForStatement
+      │     │     │  ├─ initExpression
+      │     │     │  │  ├─ type: VariableDeclarationStatement
+      │     │     │  │  ├─ variables
+      │     │     │  │  │  └─ 0
+      │     │     │  │  │     ├─ type: VariableDeclaration
+      │     │     │  │  │     ├─ typeName
+      │     │     │  │  │     │  ├─ type: ElementaryTypeName
+      │     │     │  │  │     │  ├─ name: uint8
+      │     │     │  │  │     │  └─ stateMutability
+      │     │     │  │  │     ├─ name: i
+      │     │     │  │  │     ├─ identifier
+      │     │     │  │  │     │  ├─ type: Identifier
+      │     │     │  │  │     │  └─ name: i
+      │     │     │  │  │     ├─ storageLocation
+      │     │     │  │  │     ├─ isStateVar: false
+      │     │     │  │  │     ├─ isIndexed: false
+      │     │     │  │  │     └─ expression
+      │     │     │  │  └─ initialValue
+      │     │     │  │     ├─ type: NumberLiteral
+      │     │     │  │     ├─ number: 0
+      │     │     │  │     └─ subdenomination
+      │     │     │  ├─ conditionExpression
+      │     │     │  │  ├─ type: BinaryOperation
+      │     │     │  │  ├─ operator: <
+      │     │     │  │  ├─ left
+      │     │     │  │  │  ├─ type: Identifier
+      │     │     │  │  │  └─ name: i
+      │     │     │  │  └─ right
+      │     │     │  │     ├─ type: Identifier
+      │     │     │  │     └─ name: candidateCounter
+      │     │     │  ├─ loopExpression
+      │     │     │  │  ├─ type: ExpressionStatement
+      │     │     │  │  └─ expression
+      │     │     │  │     ├─ type: UnaryOperation
+      │     │     │  │     ├─ operator: ++
+      │     │     │  │     ├─ subExpression
+      │     │     │  │     │  ├─ type: Identifier
+      │     │     │  │     │  └─ name: i
+      │     │     │  │     └─ isPrefix: false
+      │     │     │  └─ body
+      │     │     │     ├─ type: Block
+      │     │     │     └─ statements
+      │     │     │        └─ 0
+      │     │     │           ├─ type: ExpressionStatement
+      │     │     │           └─ expression
+      │     │     │              ├─ type: BinaryOperation
+      │     │     │              ├─ operator: =
+      │     │     │              ├─ left
+      │     │     │              │  ├─ type: IndexAccess
+      │     │     │              │  ├─ base
+      │     │     │              │  │  ├─ type: Identifier
+      │     │     │              │  │  └─ name: voteCountingArray
+      │     │     │              │  └─ index
+      │     │     │              │     ├─ type: Identifier
+      │     │     │              │     └─ name: i
+      │     │     │              └─ right
+      │     │     │                 ├─ type: FunctionCall
+      │     │     │                 ├─ expression
+      │     │     │                 │  ├─ type: MemberAccess
+      │     │     │                 │  ├─ expression
+      │     │     │                 │  │  ├─ type: Identifier
+      │     │     │                 │  │  └─ name: VoteLibrary
+      │     │     │                 │  └─ memberName: VoteCounting
+      │     │     │                 ├─ arguments
+      │     │     │                 │  ├─ 0
+      │     │     │                 │  │  ├─ type: MemberAccess
+      │     │     │                 │  │  ├─ expression
+      │     │     │                 │  │  │  ├─ type: IndexAccess
+      │     │     │                 │  │  │  ├─ base
+      │     │     │                 │  │  │  │  ├─ type: Identifier
+      │     │     │                 │  │  │  │  └─ name: candidateList
+      │     │     │                 │  │  │  └─ index
+      │     │     │                 │  │  │     ├─ type: BinaryOperation
+      │     │     │                 │  │  │     ├─ operator: +
+      │     │     │                 │  │  │     ├─ left
+      │     │     │                 │  │  │     │  ├─ type: Identifier
+      │     │     │                 │  │  │     │  └─ name: i
+      │     │     │                 │  │  │     └─ right
+      │     │     │                 │  │  │        ├─ type: NumberLiteral
+      │     │     │                 │  │  │        ├─ number: 1
+      │     │     │                 │  │  │        └─ subdenomination
+      │     │     │                 │  │  └─ memberName: voteID
+      │     │     │                 │  └─ 1
+      │     │     │                 │     ├─ type: MemberAccess
+      │     │     │                 │     ├─ expression
+      │     │     │                 │     │  ├─ type: IndexAccess
+      │     │     │                 │     │  ├─ base
+      │     │     │                 │     │  │  ├─ type: Identifier
+      │     │     │                 │     │  │  └─ name: candidateList
+      │     │     │                 │     │  └─ index
+      │     │     │                 │     │     ├─ type: BinaryOperation
+      │     │     │                 │     │     ├─ operator: +
+      │     │     │                 │     │     ├─ left
+      │     │     │                 │     │     │  ├─ type: Identifier
+      │     │     │                 │     │     │  └─ name: i
+      │     │     │                 │     │     └─ right
+      │     │     │                 │     │        ├─ type: NumberLiteral
+      │     │     │                 │     │        ├─ number: 1
+      │     │     │                 │     │        └─ subdenomination
+      │     │     │                 │     └─ memberName: voteCount
+      │     │     │                 ├─ names
+      │     │     │                 └─ identifiers
+      │     │     └─ 3
+      │     │        ├─ type: ReturnStatement
+      │     │        └─ expression
+      │     │           ├─ type: FunctionCall
+      │     │           ├─ expression
+      │     │           │  ├─ type: MemberAccess
+      │     │           │  ├─ expression
+      │     │           │  │  ├─ type: Identifier
+      │     │           │  │  └─ name: VoteLibrary
+      │     │           │  └─ memberName: voteCounter
+      │     │           ├─ arguments
+      │     │           │  └─ 0
+      │     │           │     ├─ type: Identifier
+      │     │           │     └─ name: voteCountingArray
+      │     │           ├─ names
+      │     │           └─ identifiers
+      │     ├─ visibility: external
+      │     ├─ modifiers
+      │     ├─ override
+      │     ├─ isConstructor: false
+      │     ├─ isReceiveEther: false
+      │     ├─ isFallback: false
+      │     ├─ isVirtual: false
+      │     └─ stateMutability: view
+      └─ kind: contract

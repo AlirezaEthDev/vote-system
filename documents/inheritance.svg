@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260pt" height="44pt" viewBox="0.00 0.00 260.01 44.00">
+<g id="graph0" class="graph" transform="translate(4,40) scale(1)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-40 256.01,-40 256.01,4 -4,4" style=""/>
+<!-- VoteLibrary -->
+<g id="node1" class="node" pointer-events="visible" data-name="VoteLibrary">
+
+<ellipse fill="none" stroke="black" cx="58.76" cy="-18" rx="58.53" ry="18" style=""/>
+<text text-anchor="middle" x="58.76" y="-13.8" font-family="Times,serif" font-size="14.00" style="">VoteLibrary</text>
+</g>
+<!-- VoteSystem -->
+<g id="node2" class="node" pointer-events="visible" data-name="VoteSystem">
+
+<ellipse fill="none" stroke="black" cx="193.76" cy="-18" rx="58.49" ry="18" style=""/>
+<text text-anchor="middle" x="193.76" y="-13.8" font-family="Times,serif" font-size="14.00" style="">VoteSystem</text>
+</g>
+</g>
+</svg>

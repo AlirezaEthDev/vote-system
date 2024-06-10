@@ -1,0 +1,36 @@
+ Sūrya's Description Report
+
+ Files Description Table
+
+
+|  File Name  |  SHA-1 Hash  |
+|-------------|--------------|
+| <path to>\votingSystem.sol | c216ae016bfc5165529472fe5377a4b9995b4a5a |
+
+
+ Contracts Description Table
+
+
+|  Contract  |         Type        |       Bases      |                  |                 |
+|:----------:|:-------------------:|:----------------:|:----------------:|:---------------:|
+|     └      |  **Function Name**  |  **Visibility**  |  **Mutability**  |  **Modifiers**  |
+||||||
+| **VoteLibrary** | Library |  |||
+| └ | voteCounter | External ❗️ |   |NO❗️ |
+| └ | isValidSignature | External ❗️ |   |NO❗️ |
+| └ | recoverSignature | Public ❗️ |   |NO❗️ |
+||||||
+| **VoteSystem** | Implementation |  |||
+| └ | addCandidateList | External ❗️ | 🛑  | onlyTrustedAccount |
+| └ | viewList | External ❗️ |   |NO❗️ |
+| └ | setVotePeriod | External ❗️ | 🛑  | onlyTrustedAccount |
+| └ | voteTo | External ❗️ | 🛑  |NO❗️ |
+| └ | countVote | External ❗️ |   |NO❗️ |
+
+
+ Legend
+
+|  Symbol  |  Meaning  |
+|:--------:|-----------|
+|    🛑    | Function can modify state |
+|    💵    | Function is payable |

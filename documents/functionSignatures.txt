@@ -1,0 +1,10 @@
+| Function Name | Sighash    | Function Signature | 
+| ------------- | ---------- | ------------------ | 
+| voteCounter | d74ecf58 | voteCounter((uint8,uint)[]) |
+| isValidSignature | 1626ba7e | isValidSignature(bytes32,bytes) |
+| recoverSignature | 7621fd67 | recoverSignature(bytes32,bytes) |
+| addCandidateList | c741430c | addCandidateList((bytes,bytes,uint40,uint8,uint)[]) |
+| viewList | 8246482f | viewList(uint8) |
+| setVotePeriod | dcad57d1 | setVotePeriod(uint256,uint256) |
+| voteTo | 6b570dce | voteTo(uint8,bytes32,bytes) |
+| countVote | 1a6cd2fd | countVote() |

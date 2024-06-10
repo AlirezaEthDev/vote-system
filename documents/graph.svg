@@ -1,0 +1,138 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="622pt" height="570pt" viewBox="0.00 0.00 621.61 570.00">
+<g id="graph0" class="graph" transform="translate(32.29046721645517,534.0448757449103) scale(0.9082183661687413)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-566 617.61,-566 617.61,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="clusterVoteLibrary">
+
+<path fill="#445773" stroke="#445773" d="M259.74,-8C259.74,-8 593.61,-8 593.61,-8 599.61,-8 605.61,-14 605.61,-20 605.61,-20 605.61,-181 605.61,-181 605.61,-187 599.61,-193 593.61,-193 593.61,-193 259.74,-193 259.74,-193 253.74,-193 247.74,-187 247.74,-181 247.74,-181 247.74,-20 247.74,-20 247.74,-14 253.74,-8 259.74,-8" style=""/>
+<text text-anchor="middle" x="426.67" y="-176.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">VoteLibrary  (lib)</text>
+</g>
+<g id="clust2" class="cluster" data-name="clusterVoteSystem">
+
+<path fill="#445773" stroke="#445773" d="M20,-62C20,-62 215.74,-62 215.74,-62 221.74,-62 227.74,-68 227.74,-74 227.74,-74 227.74,-405 227.74,-405 227.74,-411 221.74,-417 215.74,-417 215.74,-417 20,-417 20,-417 14,-417 8,-411 8,-405 8,-405 8,-74 8,-74 8,-68 14,-62 20,-62" style=""/>
+<text text-anchor="middle" x="117.87" y="-400.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">VoteSystem</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="44.87,-425 44.87,-554 366.68,-554 366.68,-425 44.87,-425" style=""/>
+<text text-anchor="middle" x="205.77" y="-537.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+</g>
+<!-- VoteLibrary.voteCounter -->
+<g id="node1" class="node" pointer-events="visible" data-name="VoteLibrary.voteCounter">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="331.68" cy="-34" rx="58.55" ry="18" style=""/>
+<text text-anchor="middle" x="331.68" y="-29.8" font-family="Times,serif" font-size="14.00" style="">voteCounter</text>
+</g>
+<!-- VoteLibrary.isValidSignature -->
+<g id="node2" class="node" pointer-events="visible" data-name="VoteLibrary.isValidSignature">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="331.68" cy="-142" rx="75.89" ry="18" style=""/>
+<text text-anchor="middle" x="331.68" y="-137.8" font-family="Times,serif" font-size="14.00" style="">isValidSignature</text>
+</g>
+<!-- VoteLibrary.recoverSignature -->
+<g id="node3" class="node" pointer-events="visible" data-name="VoteLibrary.recoverSignature">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="520.62" cy="-142" rx="76.99" ry="18" style=""/>
+<text text-anchor="middle" x="520.62" y="-137.8" font-family="Times,serif" font-size="14.00" style="">recoverSignature</text>
+</g>
+<!-- VoteLibrary.isValidSignature&#45;&gt;VoteLibrary.recoverSignature -->
+<g id="edge1" class="edge" data-name="VoteLibrary.isValidSignature-&gt;VoteLibrary.recoverSignature">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M408.98,-142C415.69,-142 422.52,-142 429.32,-142" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="429.32,-145.5 439.32,-142 429.32,-138.5 429.32,-145.5" style=""/>
+</g>
+<!-- VoteLibrary.VoteCounting -->
+<g id="node4" class="node" pointer-events="visible" data-name="VoteLibrary.VoteCounting">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="331.68" cy="-88" rx="65.52" ry="18" style=""/>
+<text text-anchor="middle" x="331.68" y="-83.8" font-family="Times,serif" font-size="14.00" style="">VoteCounting</text>
+</g>
+<!-- VoteSystem.onlyTrustedAccount -->
+<g id="node5" class="node" pointer-events="visible" data-name="VoteSystem.onlyTrustedAccount">
+
+<polygon fill="#edad56" stroke="#1bc6a6" stroke-width="3" points="215.61,-354.54 215.61,-369.46 158.35,-380 77.38,-380 20.13,-369.46 20.13,-354.54 77.38,-344 158.35,-344 215.61,-354.54" style=""/>
+<polygon fill="none" stroke="#1bc6a6" stroke-width="3" points="219.61,-351.21 219.61,-372.79 158.72,-384 77.02,-384 16.13,-372.79 16.13,-351.21 77.02,-340 158.72,-340 219.61,-351.21" style=""/>
+<text text-anchor="middle" x="117.87" y="-357.8" font-family="Times,serif" font-size="14.00" style="">onlyTrustedAccount</text>
+</g>
+<!-- VoteSystem.addCandidateList -->
+<g id="node6" class="node" pointer-events="visible" data-name="VoteSystem.addCandidateList">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="117.87" cy="-304" rx="79.31" ry="18" style=""/>
+<text text-anchor="middle" x="117.87" y="-299.8" font-family="Times,serif" font-size="14.00" style="">addCandidateList</text>
+</g>
+<!-- VoteSystem.viewList -->
+<g id="node7" class="node" pointer-events="visible" data-name="VoteSystem.viewList">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="117.87" cy="-250" rx="44.66" ry="18" style=""/>
+<text text-anchor="middle" x="117.87" y="-245.8" font-family="Times,serif" font-size="14.00" style="">viewList</text>
+</g>
+<!-- VoteSystem.setVotePeriod -->
+<g id="node8" class="node" pointer-events="visible" data-name="VoteSystem.setVotePeriod">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="117.87" cy="-196" rx="66" ry="18" style=""/>
+<text text-anchor="middle" x="117.87" y="-191.8" font-family="Times,serif" font-size="14.00" style="">setVotePeriod</text>
+</g>
+<!-- VoteSystem.voteTo -->
+<g id="node9" class="node" pointer-events="visible" data-name="VoteSystem.voteTo">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="117.87" cy="-142" rx="38.28" ry="18" style=""/>
+<text text-anchor="middle" x="117.87" y="-137.8" font-family="Times,serif" font-size="14.00" style="">voteTo</text>
+</g>
+<!-- VoteSystem.voteTo&#45;&gt;VoteLibrary.isValidSignature -->
+<g id="edge2" class="edge" data-name="VoteSystem.voteTo-&gt;VoteLibrary.isValidSignature">
+
+<path fill="none" stroke="white" stroke-width="2" d="M157.23,-142C180.8,-142 212.04,-142 241.5,-142" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="241.41,-145.5 251.41,-142 241.41,-138.5 241.41,-145.5" style=""/>
+</g>
+<!-- VoteSystem.countVote -->
+<g id="node10" class="node" pointer-events="visible" data-name="VoteSystem.countVote">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="117.87" cy="-88" rx="51.03" ry="18" style=""/>
+<text text-anchor="middle" x="117.87" y="-83.8" font-family="Times,serif" font-size="14.00" style="">countVote</text>
+</g>
+<!-- VoteSystem.countVote&#45;&gt;VoteLibrary.voteCounter -->
+<g id="edge4" class="edge" data-name="VoteSystem.countVote-&gt;VoteLibrary.voteCounter">
+
+<path fill="none" stroke="white" stroke-width="2" d="M161.48,-77.14C193.11,-69.07 236.64,-57.97 271.63,-49.05" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="272.33,-52.49 281.16,-46.62 270.61,-45.7 272.33,-52.49" style=""/>
+</g>
+<!-- VoteSystem.countVote&#45;&gt;VoteLibrary.VoteCounting -->
+<g id="edge3" class="edge" data-name="VoteSystem.countVote-&gt;VoteLibrary.VoteCounting">
+
+<path fill="none" stroke="white" stroke-width="2" d="M170.14,-88C194.77,-88 224.82,-88 252.24,-88" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="252.01,-91.5 262.01,-88 252.01,-84.5 252.01,-91.5" style=""/>
+</g>
+<!-- key -->
+<g id="node11" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="182.87,-521 52.87,-521 52.87,-433 182.87,-433 182.87,-521" style=""/>
+<text text-anchor="start" x="102.51" y="-502.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="98.62" y="-482.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="76.07" y="-462.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="62.47" y="-442.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node12" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="358.68,-521 304.68,-521 304.68,-433 358.68,-433 358.68,-521" style=""/>
+<text text-anchor="start" x="321.68" y="-502.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="321.68" y="-482.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="none" points="319.68,-457 319.68,-477 344.68,-477 344.68,-457 319.68,-457" style=""/>
+<text text-anchor="start" x="321.68" y="-462.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="321.68,-439 321.68,-455 342.68,-455 342.68,-439 321.68,-439" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge5" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M175.87,-507C234.88,-507 252.74,-507 305.96,-507" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="305.65,-510.5 315.65,-507 305.65,-503.5 305.65,-510.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge6" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M175.87,-487C234.88,-487 252.74,-487 305.96,-487" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="305.65,-490.5 315.65,-487 305.65,-483.5 305.65,-490.5" style=""/>
+</g>
+</g>
+</svg>
