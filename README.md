@@ -9,9 +9,13 @@ Candidate Management: The contract allows for the addition of candidates with th
 
 Voting Period Management: The contract allows for the setting of a start and end time for the voting period.
 
-Vote Casting: The contract allows for the casting of votes by eligible voters.
+Vote Cast: The contract allows for the casting of votes by eligible voters.
 
-Vote Counting: The contract includes a function for counting the votes and returning the results.
+Vote Count: The contract includes a function for counting the votes and returning the results.
+
+Vote Validate: The vote of each eligible voter, signed by the trusted account, is verified by the contract. The contract uses the functions of ERC-1271 to validate the signature, determining whether the voter is eligible or not. If eligible, the contract counts the vote; otherwise, the vote is ignored.
+
+Only EOA: This vote system is designed to only allow externally owned accounts (EOAs) to participate in voting. Smart contracts are not permitted to cast votes.
 
 # Usage
 
