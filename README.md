@@ -22,7 +22,7 @@ To use this contract, you will need to deploy it to a blockchain network such as
 Library:
 A library for managing vote counting and validation functions.
 
-Interface `(Not developed yet)`:
+Interface (Not developed yet):
 An interface defining the required functions for a voting contract.
 
 Main Contract:
@@ -34,7 +34,7 @@ Library:
 
 `VoteLibrary` contains structs for voters and candidates, along with functions for validating candidates and processing votes.
 
-Interface `(Not developed yet)`:
+Interface (Not developed yet):
 
 `IVotingSystem` defines the required functions for a voting system contract.
 
