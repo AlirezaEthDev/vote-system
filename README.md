@@ -95,6 +95,25 @@ Requirements:
 
 `Trusted Account`: Trusted account is the election organizer and observer. It also checks whether the voter is eligible (allowed to vote) or not. Moreover, this account is responsible for adding candidates, setting the voting period, and managing the vote counting process. The contract requires it to manage the vote system.
 
+# Key Protocol
+
+Vote Validation:
+
+The protocol of vote validation is based on ERC-1271 and involves the following steps:
+
+1) Signature Generation:
+   * The trusted account generates a signature using its private key for each vote that it detects the voter is eligible (allowed to vote).
+   * The signature is sent back along with the vote to the voter.
+   * The voter sends the signed vote to the contract.
+2) Signature Verification:
+   * The `isValidSignature()` function in the `VoteLibrary` (called by `voteTo()` function in `VoteSystem` contract at the voting time) checks if the signature provided with a vote matches the trusted account's signature.
+   * If the signature is valid, the function returns a specific magic value (`0x1626ba7e`) and that means the voter is eligible.
+   * If the magic value returned, contract increments the vote count for the corresponding candidate.
+3) Revote Prevention:
+   * The `voteTo()` function in the `VoteSystem` contract checks if the voter has not voted before (using the `revoteCheck` mapping).
+   * If the voter has already voted, the function prevents them from voting again.
+        
+
 # License
 
 This contract is licensed under the MIT License. Please note that this README file is a basic template and may need to be customized to fit the specific needs of your project.
