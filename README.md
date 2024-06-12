@@ -102,7 +102,7 @@ Vote Validation:
 The protocol of vote validation is based on ERC-1271 and involves the following steps:
 
 1) Signature Generation:
-   * The trusted account generates a signature using its private key for each vote that it detects the voter is eligible (allowed to vote).
+   * The trusted account generates a signature using its Ethereum private key for each vote that it detects the voter is eligible (allowed to vote).
    * The signature is sent back along with the vote to the voter.
    * The voter sends the signed vote to the contract.
 2) Signature Verification:
