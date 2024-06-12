@@ -89,7 +89,7 @@ Events:
 
 Requirements:
 
-`Trusted Account`: The contract requires a trusted account to manage the vote system. This account is responsible for adding candidates, setting the voting period, and managing the vote counting process.
+`Trusted Account`: Trusted account is the election organizer and observer. It also checks whether the voter is eligible (allowed to vote) or not. Moreover, this account is responsible for adding candidates, setting the voting period, and managing the vote counting process. The contract requires it to manage the vote system.
 
 # License
 
