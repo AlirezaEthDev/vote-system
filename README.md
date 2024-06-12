@@ -63,7 +63,7 @@ Main Contract:
 
 #Requirements
 
-Trusted Account: The contract requires a trusted account to manage the vote system. This account is responsible for adding candidates, setting the voting period, and managing the vote counting process.
+`Trusted Account`: The contract requires a trusted account to manage the vote system. This account is responsible for adding candidates, setting the voting period, and managing the vote counting process.
 
 # License
 
