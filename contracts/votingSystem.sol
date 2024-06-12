@@ -33,8 +33,8 @@ library VoteLibrary{
         return sortedCountResult;
     }
     
-    function isValidSignature(bytes32 hash, bytes calldata signature) external view returns (bytes4) {
-        address signer = recoverSignature(hash, signature);
+    function isValidSignature(bytes32 hashOfVote, bytes calldata signatureOfTrustedAccount) external view returns (bytes4) {
+        address signer = recoverSignature(hashOfVote, signatureOfTrustedAccount);
         if (signer == TRUSTED_ACCOUNT) {
             return 0x1626ba7e;
         }else{
@@ -42,24 +42,24 @@ library VoteLibrary{
         }
     }
 
-    function recoverSignature(bytes32 hash, bytes memory signature) public pure returns(address) {
-        // Is signature an Ethereum signature
-        require(signature.length == 65 , "01");//01: Signature length is not valid!
+    function recoverSignature(bytes32 hashOfVote, bytes memory signatureOfTrustedAccount) public pure returns(address) {
+        // Is signatureOfTrustedAccount an Ethereum signature
+        require(signatureOfTrustedAccount.length == 65 , "01");//01: signatureOfTrustedAccount length is not valid!
 
-        // Validate the provided Ethereum signature (signature)
-        uint8 v = uint8( signature[ 64 ] );
+        // Validate the provided Ethereum signature (signatureOfTrustedAccount)
+        uint8 v = uint8( signatureOfTrustedAccount[ 64 ] );
         bytes32 r;
         bytes32 s;
         assembly {
-            r := mload( add( signature , 0x20 ) )
-            s := mload( add( signature , 0x40 ) )
+            r := mload( add( signatureOfTrustedAccount , 0x20 ) )
+            s := mload( add( signatureOfTrustedAccount , 0x40 ) )
         }
         require(uint256( s ) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0,
-                    "02");// 02: The 's' value of the signature is not valid!
-        require(v == 27 || v == 28, "03");// 03: The 'v' value of the signature is not valid!
+                    "02");// 02: The 's' value of the signatureOfTrustedAccount is not valid!
+        require(v == 27 || v == 28, "03");// 03: The 'v' value of the signatureOfTrustedAccount is not valid!
 
-        // Recover the signer's address from the signature
-        address signer = ecrecover(hash, v, r, s);
+        // Recover the signer's address from the signatureOfTrustedAccount
+        address signer = ecrecover(hashOfVote, v, r, s);
 
         // Validate the structure of the recovered address
         require( signer != address( 0x0 ), "04");// 04: The signer address is not valid!
@@ -126,7 +126,7 @@ contract VoteSystem{
         require(startOfVotePeriod!= 0 && block.timestamp >= startOfVotePeriod && block.timestamp <= endOfVotePeriod, "07");// 07: Out of vote period!
         //Validate revote
         require(!revoteCheck[ msg.sender ], "08");// 08: Revoting is not allowed!
-        //Validate signature
+        //Validate signatureOfTrustedAccount
         bytes4 validationResult = VoteLibrary.isValidSignature(voteHash, trustedAccountSignature);
         require(validationResult == 0x1626ba7e, "09");// 09: You are not an eligible voter!
         //Count the vote
