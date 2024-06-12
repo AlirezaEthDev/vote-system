@@ -42,7 +42,28 @@ Main Contract:
 
 `VotingSystem` implements the voting interface, manages voters and candidates, and uses the library functions for voting logic.
 
-# Functions
+# Library
+
+ Functions:
+
+The `VoteLibrary` library contains three functions:
+1) `voteCounter(VoteCounting[] calldata countResult)`:
+   * This function takes an array of VoteCounting structs as input.
+   * It sorts the vote counts in ascending order.
+   * The sorted array is returned.
+2) `isValidSignature(bytes32 hashOfVote, bytes calldata signatureOfTrustedAccount)`:
+   * This function takes a hash of a vote and a signature from the trusted account as input.
+   * It recovers the signer's address from the signature.
+   * If the recovered address matches the trusted account, it returns a specific magic value (`0x1626ba7e`). Otherwise, it returns `0xffffffff`.
+3) `recoverSignature(bytes32 hashOfVote, bytes memory signatureOfTrustedAccount)`:
+   * This function takes a hash of a vote and a signature from the trusted account as input.
+   * It validates the signature by checking its length, the `s` value, and the `v` value.
+   * If the signature is valid, it recovers the signer's address from the signature.
+   * The function returns the recovered signer's address.
+
+# Smart Contract
+
+Functions:
 
 `addCandidateList()`: Adds a list of candidates to the contract.
 
@@ -54,14 +75,19 @@ Main Contract:
 
 `countVote()`: Returns the vote count for each candidate.
 
-# Events
+****************************************************************
+
+Events: 
+
 `NewCandidateAdded`: Triggered when a new candidate is added to the contract.
 
 `VotePeriodUpdate`: Triggered when the voting period is updated.
 
 `NewVoteTo`: Triggered when a vote is cast.
 
-#Requirements
+*****************************************************************
+
+Requirements:
 
 `Trusted Account`: The contract requires a trusted account to manage the vote system. This account is responsible for adding candidates, setting the voting period, and managing the vote counting process.
 
